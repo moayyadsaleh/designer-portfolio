@@ -88,3 +88,10 @@ document
       formStatus.className = "error";
     }
   });
+window.addEventListener("scroll", function () {
+  const parallaxElements = document.querySelectorAll(".parallax");
+  parallaxElements.forEach((element) => {
+    const offset = window.scrollY;
+    element.style.transform = `translateY(${offset * 0.5}px)`;
+  });
+});
