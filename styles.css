@@ -114,6 +114,7 @@ nav ul {
 }
 .parallax-portfolio {
   background-image: url("pexels-pixabay-355465.jpg") !important;
+  background-attachment: fixed !important;
   background-size: cover !important;
   background-position: center !important;
   padding: 100px 0 !important;
