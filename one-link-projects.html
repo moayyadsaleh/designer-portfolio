@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore My Work. See What's Possible.</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">Portfolio</div>
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #0e0e0e;
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      header {
+        height: 100vh;
+        background-image: url("language-training.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 4rem;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      section {
+        padding: 5rem 2rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+      .project-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .project-item {
+        backdrop-filter: blur(15px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        padding: 1.5rem;
+      }
+
+      .project-item h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+        color: #fff;
+      }
+
+      .project-item p {
+        color: #ccc;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      .project-item a {
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+
+      .back-button {
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.75rem 1.5rem;
+        border-radius: 10px;
+        display: inline-block;
+        margin: 2rem auto;
+        text-align: center;
+        max-width: 200px;
+      }
+
+      footer {
+        padding: 2rem;
+        text-align: center;
+        background: #1a1a1a;
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2.5rem;
+          padding: 0.5rem 1rem;
+        }
+
+        .project-item {
+          padding: 1rem;
+        }
+
+        .project-item h3 {
+          font-size: 1.25rem;
+        }
+
+        .project-item p {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header h1 {
+          font-size: 2rem;
+          padding: 0.5rem;
+        }
+
+        .project-item h3 {
+          font-size: 1rem;
+        }
+
+        .project-item p {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Explore My Work. See What's Possible.</h1>
+    </header>
+
+    <section style="background-image: url('background1.jpg')">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <div class="project-item">
+          <h3>Project 1: Cultural Immersion</h3>
+          <p>
+            Experience real-world scenarios to enhance cultural understanding.
+          </p>
+          <a href="#" target="_blank"> <i class="fas fa-eye"></i> View Demo </a>
+        </div>
+        <div class="project-item">
+          <h3>Project 2: Language Builder</h3>
+          <p>A step-by-step tool for mastering new languages.</p>
+          <a href="#" target="_blank"> <i class="fas fa-eye"></i> View Demo </a>
+        </div>
+        <div class="project-item">
+          <h3>Project 3: Global Etiquette</h3>
+          <p>Learn cultural etiquette for seamless global interactions.</p>
+          <a href="#" target="_blank"> <i class="fas fa-eye"></i> View Demo </a>
+        </div>
+        <div class="project-item">
+          <h3>Project 4: Mission Brief</h3>
+          <p>Prepare with tailored briefings for operational success.</p>
+          <a href="#" target="_blank"> <i class="fas fa-eye"></i> View Demo </a>
+        </div>
+        <div class="project-item">
+          <h3>Project 5: Dialect Explorer</h3>
+          <p>Dive into regional dialects for nuanced communication.</p>
+          <a href="#" target="_blank"> <i class="fas fa-eye"></i> View Demo </a>
+        </div>
+        <div class="project-item">
+          <h3>Project 6: Language Gamification</h3>
+          <p>Learn while playing engaging and interactive games.</p>
+          <a href="#" target="_blank"> <i class="fas fa-eye"></i> View Demo </a>
+        </div>
+        <div class="project-item">
+          <h3>Project 7: Culture Lens</h3>
+          <p>Gain insights into diverse cultural perspectives.</p>
+          <a href="#" target="_blank"> <i class="fas fa-eye"></i> View Demo </a>
+        </div>
+        <div class="project-item">
+          <h3>Project 8: Tactical Communication</h3>
+          <p>Strategic language tools for high-stakes situations.</p>
+          <a href="#" target="_blank"> <i class="fas fa-eye"></i> View Demo </a>
+        </div>
+        <div class="project-item">
+          <h3>Project 9: Multilingual Workflow</h3>
+          <p>Streamline tasks with multilingual support systems.</p>
+          <a href="#" target="_blank"> <i class="fas fa-eye"></i> View Demo </a>
+        </div>
+        <div class="project-item">
+          <h3>Project 10: Cultural Exchange Hub</h3>
+          <p>Connect with peers globally for cultural sharing.</p>
+          <a href="#" target="_blank"> <i class="fas fa-eye"></i> View Demo </a>
+        </div>
+      </div>
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        rel="stylesheet"
+      />
+
+      <!-- Corrected link with Font Awesome "back" arrow -->
+      <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </section>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navList = document.getElementById("nav-list");
+      const closeBtn = document.getElementById("close-btn");
+
+      // Toggle menu on hamburger click
+      menuToggle.addEventListener("click", (event) => {
+        navList.classList.toggle("show");
+        event.stopPropagation();
+      });
+
+      // Close menu when clicking the (x) button
+      closeBtn.addEventListener("click", () => {
+        navList.classList.remove("show");
+      });
+
+      // Close menu when clicking outside the menu
+      document.addEventListener("click", (event) => {
+        if (
+          !navList.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          navList.classList.remove("show");
+        }
+      });
+    </script>
+    <footer>
+      <p>&copy; 2024 Language & Cultural Training. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

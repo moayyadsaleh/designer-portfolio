@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instructional Designer Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Hero Section with Parallax */
+      .parallax-hero {
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: url("https://www.shutterstock.com/shutterstock/videos/1056057848/thumb/1.jpg?ip=x480")
+          center/cover fixed;
+        color: #fff;
+        padding: 4rem 2rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .parallax-hero h1 {
+        font-size: 3rem;
+        background: linear-gradient(90deg, #00d4ff, #00ff8c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .parallax-hero p {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+
+      /* Portfolio Section with Parallax */
+      .parallax-section {
+        padding: 4rem 2rem;
+        background: url("https://t3.ftcdn.net/jpg/08/65/24/74/360_F_865247460_XkN9Zdajzy8PWJrGkxGvJISrcEGOqVKc.jpg")
+          center/cover fixed;
+        color: #fff;
+        backdrop-filter: blur(10px);
+      }
+
+      .portfolio-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .project {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      }
+
+      .project h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #00d4ff;
+      }
+
+      .project p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn {
+        display: inline-block;
+        background: linear-gradient(90deg, #00d4ff, #00ff8c);
+        color: #000;
+        padding: 0.7rem 1.3rem;
+        border-radius: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 255, 140, 0.5);
+      }
+
+      /* Back to Portfolio Button */
+      .back-to-portfolio {
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        font-size: 0.9rem;
+        color: #ccc;
+      }
+
+      /* Responsive Design */
+      @media (min-width: 768px) {
+        .nav-list {
+          display: flex;
+          flex-direction: row;
+          position: static;
+          background: none;
+          width: auto;
+          padding: 0;
+          border-radius: 0;
+        }
+
+        .nav-list li {
+          margin: 0 1rem;
+        }
+
+        .menu-toggle,
+        .close-btn {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 3rem;
+        }
+
+        .hero p {
+          font-size: 1.2rem;
+        }
+
+        .live-demo {
+          font-size: 1.2rem;
+          padding: 0.8rem 1.5rem;
+        }
+
+        .project-visual {
+          height: 300px;
+          font-size: 1.5rem;
+        }
+
+        section h2 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">Portfolio</div>
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+  
+    <!-- Hero Section -->
+    <header class="hero parallax-hero">
+      <h1>Mission-Driven Solutions</h1>
+      <p>Customized training. Operational excellence. Lasting impact.</p>
+    </header>
+  
+    <!-- Portfolio Section -->
+    <section id="corporate-training-projects" class="parallax-section">
+      <div class="portfolio-gallery">
+        <div class="project">
+          <h3>Operational Readiness</h3>
+          <p>Tailored training programs designed to meet mission-critical needs.</p>
+          <a href="project1.html" class="btn">
+            View Details <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+  
+        <div class="project">
+          <h3>Technology Integration</h3>
+          <p>Advanced tools and automation for streamlined operations.</p>
+          <a href="project2.html" class="btn">
+            View Details <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+  
+        <div class="project">
+          <h3>Language & Cultural Training</h3>
+          <p>Empowering teams with critical language and cultural fluency.</p>
+          <a href="project3.html" class="btn">
+            View Details <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Back to Portfolio Button -->
+      <div class="back-to-portfolio">
+        <a href="index.html#portfolio" class="btn">
+          <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+      </div>
+    </section>
+  </body>
+  
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navList = document.getElementById("nav-list");
+      const closeBtn = document.getElementById("close-btn");
+
+      // Toggle menu on hamburger click
+      menuToggle.addEventListener("click", (event) => {
+        navList.classList.toggle("show");
+        event.stopPropagation();
+      });
+
+      // Close menu when clicking the (x) button
+      closeBtn.addEventListener("click", () => {
+        navList.classList.remove("show");
+      });
+
+      // Close menu when clicking outside the menu
+      document.addEventListener("click", (event) => {
+        if (
+          !navList.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          navList.classList.remove("show");
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

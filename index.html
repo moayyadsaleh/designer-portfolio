@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instructional Designer Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <style>
+    .nav-list a:hover {
+      color: #00d4ff;
+    }
+
+    #about h2 {
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, #00d4ff, #00ff8c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .about-item i {
+      font-size: 2rem;
+      color: #00d4ff;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    .project h3 {
+      color: #00d4ff;
+    }
+
+    .project p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #00d4ff, #00ff8c);
+      color: #000;
+      padding: 0.7rem 1.3rem;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 255, 140, 0.5);
+    }
+
+    #contact button {
+      padding: 0.8rem;
+      font-size: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+      .nav-list {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        padding: 0;
+      }
+
+      .menu-toggle,
+      .close-btn {
+        display: none;
+      }
+
+      .portfolio-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+
+      .hero-text p {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">Portfolio</div>
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+
+    <!-- Home Section with Parallax Effect -->
+    <section id="home" class="section home parallax">
+      <div class="hero-content">
+        <div class="hero-overlay"></div>
+        <div class="hero-image">
+          <img src="Moayyad's Pic.png" alt="Moayyad's Picture" />
+        </div>
+        <div class="hero-text">
+          <h1>Hi, I'm <span>Moayyad</span></h1>
+          <p>Training. Transformation. Results.</p>
+        </div>
+      </div>
+    </section>
+    <div id="parallax-container">
+      <div id="background"></div>
+      <div id="intro">
+        <div id="text-container"></div>
+        <div id="video-container">
+          <video autoplay muted loop playsinline>
+            <source src="Popup3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        I design strategic learning solutions, build innovative technologies,
+        and deliver measurable results.
+      </p>
+      <div class="about-item">
+        <i class="fas fa-lightbulb"></i>
+        <div>
+          <strong>Innovative:</strong> Fresh perspectives. Adaptive solutions.
+          Mission impact.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="fas fa-laptop-code"></i>
+        <div>
+          <strong>Technical:</strong> Cutting-edge tools. Seamless systems.
+          Optimized efficiency.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="fas fa-user-graduate"></i>
+        <div>
+          <strong>Empowering:</strong> Learner-focused experiences.
+          Collaborative growth. Sustained success.
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section parallax-portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-gallery">
+        <div class="project parallax-item">
+          <h3>Defense Training</h3>
+          <p>
+            Mission-aligned curriculum. Real-world applications. Proven
+            outcomes.
+          </p>
+          <a href="corporate-training-projects.html" class="btn">
+            View Projects <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="project parallax-item">
+          <h3>Technology Integration</h3>
+          <p>
+            Intelligent automation. Streamlined platforms. Enhanced operations.
+          </p>
+          <a href="tech-solutions.html" class="btn">
+            View Projects <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="project parallax-item">
+          <h3>Language & Culture</h3>
+          <p>Tailored training. Cultural fluency. Operational readiness.</p>
+          <a href="language-training.html" class="btn">
+            View Projects <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          padding-right: 10px;
+          margin-top: 20px;
+        "
+      >
+        <a
+          href="one-link-projects.html"
+          class="btn"
+          aria-label="See more projects"
+          style="
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+          "
+        >
+          <i class="fas fa-project-diagram" style="font-size: 1.5rem"></i>
+        </a>
+        <span style="font-size: 1rem; color: whitesmoke">More Projects</span>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <form
+        id="contactForm"
+        action="https://formspree.io/f/xgvegkqk"
+        method="POST"
+      >
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        <p id="formStatus" style="margin-top: 10px"></p>
+      </form>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

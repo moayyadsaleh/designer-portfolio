@@ -1,0 +1,732 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "SF Pro Display", Arial, sans-serif;
+  background: linear-gradient(135deg, #000, #333);
+  color: whitesmoke;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: whitesmoke;
+}
+
+/* Base Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem; /* Default padding for desktop */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  z-index: 1000;
+}
+
+/* Navigation List */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Hamburger Button Hidden by Default */
+.menu-toggle {
+  display: none;
+}
+
+/* Mobile View Styles */
+@media (max-width: 768px) {
+  nav {
+    padding: 0.5rem 1rem; /* Thinner padding for mobile */
+    width: 95%;
+    top: 0.5rem; /* Keep it closer to the top */
+    border-radius: 8px;
+    height: 3rem; /* Set a fixed height to keep it compact */
+  }
+
+  .logo {
+    font-size: 1rem; /* Slightly smaller logo font size */
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%; /* Dropdown directly below the nav bar */
+    left: 0;
+    border-radius: 0 0 8px 8px;
+    max-height: 50vh; /* Limit dropdown height to avoid covering too much */
+    overflow-y: auto; /* Add scroll if menu exceeds max height */
+    padding: 1rem;
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-list li {
+    margin-bottom: 0.75rem; /* Add spacing between menu items */
+  }
+
+  /* Add margin to body to avoid content being hidden by fixed nav */
+  body {
+    margin-top: 4rem; /* Push content below the fixed nav bar */
+  }
+}
+
+nav .logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.parallax-portfolio {
+  background-image: url("4k-tech-ulcajgzzc25jlrgi.jpg") !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 100px 0 !important;
+  min-height: 400px !important;
+  position: relative !important;
+  color: whitesmoke !important;
+}
+@media (max-width: 768px) {
+  .parallax-portfolio {
+    background-attachment: scroll; /* Fallback for mobile */
+  }
+}
+.parallax-portfolio {
+  min-height: 400px;
+}
+.parallax-portfolio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.parallax-portfolio * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Navigation Links with Sliding Underline Effect */
+nav ul li {
+  position: relative;
+  overflow: hidden; /* Ensures the underline doesn't overflow the link */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px; /* Space for the underline */
+  display: inline-block;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007aff; /* Blue underline */
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after,
+nav ul li a:focus::after {
+  transform: scaleX(1); /* Reveal the underline on hover or focus */
+}
+
+nav .theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+/* Hero Section with Floating Circular Photo */
+.parallax {
+  height: 100vh;
+  background: url("a-futuristic-cityscape-with-lights-and-a-city-skyline-ai-generative-free-photo.jpeg")
+    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Parallax Effect for Hero Image */
+.hero-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  transform: translateY(0);
+  transition: transform 0.1s ease-out;
+}
+.parallax::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Parallax Background Effect */
+.parallax {
+  height: 100vh;
+  background: url("a-futuristic-cityscape-with-lights-and-a-city-skyline-ai-generative-free-photo.jpeg")
+    no-repeat center center/cover;
+  background-attachment: fixed; /* Enables parallax effect */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+}
+
+.parallax::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  text-align: left;
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text span {
+  color: #ccc;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: whitesmoke;
+}
+
+/* About Section */
+#about {
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: left; /* Aligns button text to the left */
+}
+/* Sliding Overlay Effect */
+
+#about p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: whitesmoke;
+}
+
+.about-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #222, #000);
+  box-shadow: inset -4px -4px 8px #333, inset 4px 4px 8px #000;
+}
+
+.about-item i {
+  font-size: 2rem;
+  color: whitesmoke;
+}
+
+.about-item div strong {
+  display: block;
+  font-size: 1.1rem;
+  color: whitesmoke;
+}
+
+/* Portfolio Section */
+#portfolio {
+  padding: 3rem 2rem;
+  background: #111;
+  color: whitesmoke;
+}
+
+#portfolio .portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.project {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  text-align: left; /* Aligns button text to the left */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Parallax background for contact section */
+#contact {
+  position: relative; /* Position relative for stacking */
+  padding: 3rem 2rem;
+  background: url("pexels-josh-hild-1270765-3573383.jpg") no-repeat center
+    center fixed; /* Add your image */
+  background-size: cover; /* Ensure the background covers the entire section */
+  color: whitesmoke;
+  z-index: 1; /* Keeps it above other layers */
+}
+
+/* Optional: Add an overlay to dim the background for readability */
+#contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: -1; /* Ensures the overlay stays behind text */
+}
+
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(10px); /* Glassmorphism Effect */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+form input,
+form textarea {
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.1),
+    inset 4px 4px 8px rgba(0, 0, 0, 0.5);
+  background: rgba(34, 34, 34, 0.8);
+  color: whitesmoke;
+  font-size: 1rem;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  background: rgba(50, 50, 50, 0.9);
+  box-shadow: 0 0 12px rgba(0, 128, 255, 0.6);
+}
+
+form textarea {
+  min-height: 150px;
+  resize: vertical; /* Allow vertical resizing */
+}
+
+form button {
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #444, #111);
+  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  text-align: center;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+form button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  form {
+    padding: 1.5rem;
+  }
+
+  form button {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive Design for Hero Section */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+.btn {
+  font-weight: normal !important;
+}
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+/* Menu Toggle Button (Hamburger Icon) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(51, 51, 51, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    position: absolute;
+    top: 60px; /* Adjust based on your nav height */
+    left: 0;
+    padding: 1rem 0;
+    z-index: 99;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+.project-info {
+  flex: 1 1 45%;
+  max-width: 45%;
+  text-align: left;
+}
+
+.project-info h3 {
+  margin-top: 1.5rem;
+}
+
+.project-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.project-info ul li {
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+
+.live-demo-btn {
+  margin-top: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-image,
+  .project-info {
+    max-width: 100%;
+  }
+}
+/* Apple-Inspired Button */
+.btn {
+  display: inline-block;
+  background-color: #0071e3; /* Apple's signature blue */
+  color: #fff;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: none;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  background-color: #004999;
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Button */
+body.dark-mode .btn {
+  background-color: #0a84ff;
+  color: #fff;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #0077e3;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: whitesmoke;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+/* Hide the close button on larger screens */
+@media (min-width: 768px) {
+  .close-btn {
+    display: none;
+  }
+}
+#formStatus {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#formStatus.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+#formStatus.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+/* Base styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#parallax-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Parallax background */
+#background {
+  position: fixed; /* Fixed positioning for parallax effect */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-image: url("pexels-josh-hild-1270765-3573383.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Keep it behind other content */
+}
+
+/* Overlay to dim the background */
+#background::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: -1; /* Matches the background layer */
+}
+
+#intro {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#text-container {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Video container styling */
+#video-container {
+  position: relative;
+  width: 80%; /* Adjust as needed */
+  max-width: 800px;
+  margin: 20px auto;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
