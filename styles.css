@@ -359,6 +359,31 @@ nav .theme-toggle {
   z-index: -1; /* Ensures the overlay stays behind text */
 }
 
+#background {
+  position: fixed; /* Fixed positioning for parallax effect */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-image: url("pexels-josh-hild-1270765-3573383.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Keep it behind other content */
+}
+
+/* Overlay to dim the background */
+#background::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: -1; /* Matches the background layer */
+}
+
 form {
   max-width: 600px;
   margin: 2rem auto;
