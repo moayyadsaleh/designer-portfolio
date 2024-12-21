@@ -31,7 +31,21 @@
         padding: 4rem 2rem;
         backdrop-filter: blur(10px);
       }
+      /* Default Parallax */
+      .parallax-hero,
+      .parallax-section {
+        background-attachment: fixed;
+      }
 
+      /* Mobile Fix */
+      @media (max-width: 768px) {
+        .parallax-hero,
+        .parallax-section {
+          background-attachment: scroll;
+          background-position: center;
+          background-size: cover;
+        }
+      }
       .parallax-hero p {
         font-size: 1.2rem;
         margin-top: 1rem;
