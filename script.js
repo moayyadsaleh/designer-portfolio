@@ -56,4 +56,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Start typing animation
   type();
+});
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault(); // Prevent default form submission
 
+    const form = event.target;
+    const formData = new FormData(form);
+    const formStatus = document.getElementById("formStatus");
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        formStatus.textContent = "Thank you! Your message has been sent.";
+        formStatus.className = "success";
+        form.reset(); // Clear the form
+      } else {
+        throw new Error("An error occurred while submitting the form.");
+      }
+    } catch (error) {
+      formStatus.textContent =
+        "Oops! There was a problem submitting your form.";
+      formStatus.className = "error";
+    }
+  });

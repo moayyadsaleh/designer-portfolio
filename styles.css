@@ -183,44 +183,6 @@ nav .theme-toggle {
   color: whitesmoke;
 }
 
-/* Hero Section with Floating Circular Photo */
-.parallax {
-  height: 100vh;
-  background: url("a-futuristic-cityscape-with-lights-and-a-city-skyline-ai-generative-free-photo.jpeg")
-    no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  padding: 2rem;
-}
-
-/* Parallax Effect for Hero Image */
-.hero-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  flex-shrink: 0;
-  position: relative;
-  z-index: 2;
-  transform: translateY(0);
-  transition: transform 0.1s ease-out;
-}
-.parallax::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
 /* Parallax Background Effect */
 .parallax {
   height: 100vh;
@@ -346,8 +308,20 @@ nav .theme-toggle {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  padding: 1rem; /* Add some padding for better spacing */
 }
 
+/* Optional: Adjustments for very small screens */
+@media (max-width: 480px) {
+  #portfolio .portfolio-gallery {
+    gap: 1rem; /* Reduce gap for smaller screens */
+  }
+}
+.project h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00d4ff;
+}
 .project {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.05);
@@ -665,6 +639,12 @@ html {
   position: relative;
   height: 100vh;
   overflow: hidden;
+}
+.parallax-hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #00d4ff, #00ff8c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Parallax background */
