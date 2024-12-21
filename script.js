@@ -88,14 +88,3 @@ document
       formStatus.className = "error";
     }
   });
-
-// Simulate parallax on scroll
-document.addEventListener("scroll", () => {
-  const parallaxElements = document.querySelectorAll(
-    ".parallax-hero, .parallax-section"
-  );
-  parallaxElements.forEach((element) => {
-    const offset = window.scrollY; // Use scrollY instead of pageYOffset
-    element.style.backgroundPositionY = offset * 0.5 + "px"; // Adjust the multiplier for effect strength
-  });
-});
