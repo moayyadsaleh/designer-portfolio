@@ -141,7 +141,13 @@ nav ul {
   position: relative;
   z-index: 2;
 }
-
+/* Adjustments for mobile */
+@media (max-width: 768px) {
+  .parallax-portfolio {
+    background-attachment: scroll !important; /* Fixes the issue on mobile */
+    background-position: center !important;
+  }
+}
 /* Navigation Links with Sliding Underline Effect */
 nav ul li {
   position: relative;
