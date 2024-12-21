@@ -254,27 +254,33 @@
       const navList = document.getElementById("nav-list");
       const closeBtn = document.getElementById("close-btn");
 
-      // Toggle menu on hamburger click
-      menuToggle.addEventListener("click", (event) => {
+      // Function to toggle menu visibility
+      const toggleMenu = (event) => {
         navList.classList.toggle("show");
-        event.stopPropagation();
-      });
+        event.stopPropagation(); // Prevent click event from propagating to the document
+      };
 
-      // Close menu when clicking the (x) button
-      closeBtn.addEventListener("click", () => {
+      // Function to close the menu
+      const closeMenu = () => {
         navList.classList.remove("show");
-      });
+      };
 
-      // Close menu when clicking outside the menu
-      document.addEventListener("click", (event) => {
+      // Close menu when clicking outside
+      const handleClickOutside = (event) => {
         if (
-          !navList.contains(event.target) &&
-          !menuToggle.contains(event.target)
+          !navList.contains(event.target) && // Click is outside navList
+          !menuToggle.contains(event.target) // Click is outside menuToggle
         ) {
-          navList.classList.remove("show");
+          closeMenu();
         }
-      });
+      };
+
+      // Event listeners
+      menuToggle.addEventListener("click", toggleMenu);
+      closeBtn.addEventListener("click", closeMenu);
+      document.addEventListener("click", handleClickOutside);
     </script>
+
     <script src="script.js"></script>
   </body>
 </html>
