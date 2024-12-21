@@ -341,8 +341,7 @@ nav .theme-toggle {
 #contact {
   position: relative; /* Position relative for stacking */
   padding: 3rem 2rem;
-  background: url("pexels-josh-hild-1270765-3573383.jpg") no-repeat center
-    center fixed; /* Add your image */
+  background: url("pexels-pixabay-219692.jpg") no-repeat center center fixed; /* Add your image */
   background-size: cover; /* Ensure the background covers the entire section */
   color: whitesmoke;
   z-index: 1; /* Keeps it above other layers */
