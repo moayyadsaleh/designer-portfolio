@@ -730,3 +730,37 @@ html {
   height: auto;
   display: block;
 }
+
+/* Base parallax styles for all devices */
+.contact,
+.parallax,
+#portfolio {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Media queries for smaller devices */
+@media (max-width: 768px) {
+  .contact,
+  .parallax,
+  #portfolio {
+    background-attachment: scroll;
+    background-position: center;
+    transition: background-position 0.3s ease-out;
+  }
+
+  .contact {
+    background-image: url("a-futuristic-cityscape-with-lights-and-a-city-skyline-ai-generative-free-photo.jpeg");
+  }
+
+  .parallax {
+    background-image: url("pexels-sanaan-3052361.jpg");
+  }
+
+  #portfolio {
+    background-image: url("pexels-josh-hild-1270765-3573383.jpg");
+  }
+}
