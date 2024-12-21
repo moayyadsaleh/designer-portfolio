@@ -113,7 +113,7 @@ nav ul {
   list-style: none;
 }
 .parallax-portfolio {
-  background-image: url("pexels-pixabay-219692.jpg") !important;
+  background-image: url("4k-tech-ulcajgzzc25jlrgi.jpg") !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   background-position: center !important;
@@ -121,6 +121,66 @@ nav ul {
   min-height: 400px !important;
   position: relative !important;
   color: whitesmoke !important;
+}
+
+.parallax-portfolio {
+  min-height: 400px;
+}
+.parallax-portfolio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.parallax-portfolio * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Navigation Links with Sliding Underline Effect */
+nav ul li {
+  position: relative;
+  overflow: hidden; /* Ensures the underline doesn't overflow the link */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px; /* Space for the underline */
+  display: inline-block;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007aff; /* Blue underline */
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after,
+nav ul li a:focus::after {
+  transform: scaleX(1); /* Reveal the underline on hover or focus */
+}
+
+nav .theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: whitesmoke;
 }
 
 /* Hero Section with Floating Circular Photo */
