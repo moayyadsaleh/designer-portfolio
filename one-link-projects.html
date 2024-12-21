@@ -38,23 +38,28 @@
         scroll-behavior: smooth;
       }
 
+      /* Ensure body and html have full height for scrolling */
+      html,
       body {
-        background-color: #0e0e0e;
-        color: #fff;
+        height: 100%;
         overflow-x: hidden;
+        scroll-behavior: smooth;
       }
 
+      /* Parallax for header */
       header {
         height: 100vh;
-        background-image: url("language-training.jpg");
+        background-image: url("pexels-sanaan-3052361.jpg");
         background-size: cover;
-        background-attachment: fixed;
         background-position: center;
+        background-attachment: fixed; /* Enables parallax scrolling */
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
       }
+
+      /* Parallax for sections */
 
       header h1 {
         font-size: 4rem;
@@ -64,15 +69,17 @@
         border-radius: 20px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
       }
-
       section {
         padding: 5rem 2rem;
         text-align: center;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        background-attachment: fixed;
-        background-size: cover;
+        background-attachment: fixed; /* Enables the parallax effect */
+        background-size: 100% auto; /* Ensures the full width of the photo is displayed */
+        background-position: center top; /* Starts at the top of the image */
+        background-image: url("pexels-pixabay-219692.jpg") !important; /* Replace with your image URL */
+        transition: background-position 0.1s ease-out;
       }
 
       .project-list {

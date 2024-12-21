@@ -88,3 +88,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+document.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+
+  // Adjust header background position
+  const header = document.querySelector("header");
+  header.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+
+  // Adjust section background position
+  const sections = document.querySelectorAll("section");
+  sections.forEach((section) => {
+    section.style.backgroundPositionY = `${
+      (scrollPosition - section.offsetTop) * 0.5
+    }px`;
+  });
+});
+document.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("section");
+
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const scrollPosition = window.scrollY;
+
+    // Adjust the background position based on scroll
+    section.style.backgroundPositionY = `${
+      (scrollPosition - rect.top) * 0.5
+    }px`;
+  });
+});
