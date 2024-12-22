@@ -26,7 +26,7 @@
 
       header {
         height: 100vh;
-        background-image: url("pexels-pixabay-219692 (1) (1) (1).jpg");
+        background-image: url("pexels-josh-hild-1270765-3573383 (1).jpg");
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
@@ -185,6 +185,16 @@
       </div>
     </section>
 
+    <script>
+      document.addEventListener("scroll", function () {
+        const scrollPosition = window.scrollY;
+        const parallax = document.querySelector("header::before");
+        if (parallax) {
+          const translateValue = scrollPosition * 0.5;
+          parallax.style.transform = `translateY(${translateValue}px)`;
+        }
+      });
+    </script>
     <footer>
       <p>&copy; 2024 Language & Cultural Training. All rights reserved.</p>
     </footer>
