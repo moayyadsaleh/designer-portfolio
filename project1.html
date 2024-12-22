@@ -26,7 +26,7 @@
 
       header {
         height: 100vh;
-        background-image: url("language-training.jpg");
+        background-image: url("pexels-pixabay-219692 (1) (1) (1).jpg");
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
@@ -37,76 +37,79 @@
       }
 
       header h1 {
-        font-size: 4rem;
+        font-size: 2.5rem; /* Adjusted for smaller screens */
         backdrop-filter: blur(10px);
         background: rgba(255, 255, 255, 0.1);
-        padding: 1rem 2rem;
-        border-radius: 20px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        padding: 1rem 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       }
 
       section {
-        padding: 5rem 2rem;
+        padding: 3rem 1.5rem; /* Reduced padding for smaller screens */
         text-align: center;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
       }
 
       .project-card {
-        max-width: 600px;
+        width: 100%; /* Adjusted to fit screen width */
+        max-width: 500px;
         backdrop-filter: blur(15px);
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        padding: 1.5rem;
         text-align: left;
       }
 
       .project-card h2 {
         margin-bottom: 1rem;
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
       .project-card p {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 0.9rem;
+        line-height: 1.5;
         color: #ccc;
       }
 
       .details-section {
-        padding: 4rem 2rem;
+        padding: 3rem 1.5rem;
         display: grid;
-        gap: 2rem;
-        max-width: 800px;
+        gap: 1.5rem;
+        max-width: 600px; /* Reduced max-width for smaller screens */
         margin: 0 auto;
       }
 
       .detail-card {
-        backdrop-filter: blur(15px);
+        backdrop-filter: blur(10px);
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        padding: 1.2rem;
       }
 
       .detail-card h3 {
         margin-bottom: 0.5rem;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         color: #fff;
       }
 
       .detail-card p {
         color: #ccc;
-        font-size: 1rem;
+        font-size: 0.9rem;
         line-height: 1.4;
       }
 
       .buttons {
         margin-top: 2rem;
         display: flex;
-        justify-content: center;
+        flex-direction: column; /* Adjusted for vertical alignment */
+        align-items: center;
         gap: 1rem;
       }
 
@@ -114,14 +117,24 @@
         text-decoration: none;
         color: #fff;
         background: rgba(255, 255, 255, 0.2);
-        padding: 0.75rem 1.5rem;
-        border-radius: 10px;
+        padding: 0.7rem 1.2rem;
+        border-radius: 8px;
       }
 
       footer {
-        padding: 2rem;
+        padding: 1.5rem;
         text-align: center;
         background: #1a1a1a;
+      }
+
+      @media (min-width: 768px) {
+        header h1 {
+          font-size: 3rem; /* Slightly larger text for tablets and up */
+        }
+
+        .buttons {
+          flex-direction: row; /* Switch to row alignment for larger screens */
+        }
       }
     </style>
   </head>
