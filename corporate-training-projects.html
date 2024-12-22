@@ -257,6 +257,21 @@
         </a>
       </div>
     </section>
+
+    <script>
+      // Parallax effect for mobile and desktop
+      function parallaxEffect() {
+        const parallaxElements = document.querySelectorAll(
+          ".parallax-hero, .parallax-section"
+        );
+        parallaxElements.forEach((el) => {
+          const offset = window.pageYOffset;
+          el.style.backgroundPositionY = offset * 0.5 + "px";
+        });
+      }
+
+      window.addEventListener("scroll", parallaxEffect);
+    </script>
     <footer>
       <p>&copy; 2024 Instructional Designer Portfolio</p>
     </footer>

@@ -113,7 +113,7 @@ nav ul {
   list-style: none;
 }
 .parallax-portfolio {
-  background-image: url("pexels-pixabay-355465.jpg") !important;
+  background-image: url("pexels-peng-liu-45946-169647 (1).jpg") !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   background-position: center !important;
@@ -347,7 +347,8 @@ nav .theme-toggle {
 #contact {
   position: relative; /* Position relative for stacking */
   padding: 3rem 2rem;
-  background: url("pexels-pixabay-219692.jpg") no-repeat center center fixed; /* Add your image */
+  background: url("pexels-sanaan-3075993-min (1).jpg") no-repeat center center
+    fixed; /* Add your image */
   background-size: cover; /* Ensure the background covers the entire section */
   color: whitesmoke;
   z-index: 1; /* Keeps it above other layers */
