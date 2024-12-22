@@ -26,7 +26,7 @@
 
       header {
         height: 100vh;
-        background-image: url("pexels-josh-hild-1270765-3573383 (1).jpg");
+        background-image: url("language-training.jpg");
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
@@ -37,79 +37,76 @@
       }
 
       header h1 {
-        font-size: 2.5rem; /* Adjusted for smaller screens */
+        font-size: 4rem;
         backdrop-filter: blur(10px);
         background: rgba(255, 255, 255, 0.1);
-        padding: 1rem 1.5rem;
-        border-radius: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        padding: 1rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
       }
 
       section {
-        padding: 3rem 1.5rem; /* Reduced padding for smaller screens */
+        padding: 5rem 2rem;
         text-align: center;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
       }
 
       .project-card {
-        width: 100%; /* Adjusted to fit screen width */
-        max-width: 500px;
+        max-width: 600px;
         backdrop-filter: blur(15px);
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        padding: 1.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
         text-align: left;
       }
 
       .project-card h2 {
         margin-bottom: 1rem;
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
 
       .project-card p {
-        font-size: 0.9rem;
-        line-height: 1.5;
+        font-size: 1rem;
+        line-height: 1.6;
         color: #ccc;
       }
 
       .details-section {
-        padding: 3rem 1.5rem;
+        padding: 4rem 2rem;
         display: grid;
-        gap: 1.5rem;
-        max-width: 600px; /* Reduced max-width for smaller screens */
+        gap: 2rem;
+        max-width: 800px;
         margin: 0 auto;
       }
 
       .detail-card {
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(15px);
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-        padding: 1.2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        padding: 1.5rem;
       }
 
       .detail-card h3 {
         margin-bottom: 0.5rem;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         color: #fff;
       }
 
       .detail-card p {
         color: #ccc;
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 1.4;
       }
 
       .buttons {
         margin-top: 2rem;
         display: flex;
-        flex-direction: column; /* Adjusted for vertical alignment */
-        align-items: center;
+        justify-content: center;
         gap: 1rem;
       }
 
@@ -117,24 +114,14 @@
         text-decoration: none;
         color: #fff;
         background: rgba(255, 255, 255, 0.2);
-        padding: 0.7rem 1.2rem;
-        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
+        border-radius: 10px;
       }
 
       footer {
-        padding: 1.5rem;
+        padding: 2rem;
         text-align: center;
         background: #1a1a1a;
-      }
-
-      @media (min-width: 768px) {
-        header h1 {
-          font-size: 3rem; /* Slightly larger text for tablets and up */
-        }
-
-        .buttons {
-          flex-direction: row; /* Switch to row alignment for larger screens */
-        }
       }
     </style>
   </head>
@@ -185,16 +172,6 @@
       </div>
     </section>
 
-    <script>
-      document.addEventListener("scroll", function () {
-        const scrollPosition = window.scrollY;
-        const parallax = document.querySelector("header::before");
-        if (parallax) {
-          const translateValue = scrollPosition * 0.5;
-          parallax.style.transform = `translateY(${translateValue}px)`;
-        }
-      });
-    </script>
     <footer>
       <p>&copy; 2024 Language & Cultural Training. All rights reserved.</p>
     </footer>

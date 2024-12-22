@@ -168,21 +168,8 @@
       </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section parallax-portfolio">
-      <h2>Portfolio</h2>
-      <div class="portfolio-gallery">
-        <div class="project parallax-item">
-          <h3>Defense Training</h3>
-          <p>
-            Mission-aligned curriculum. Real-world applications. Proven
-            outcomes.
-          </p>
-          <a href="corporate-training-projects.html" class="btn">
-            View Projects <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-
+    <section class="parallax-portfolio">
+      <div class="content-wrapper">
         <div class="project parallax-item">
           <h3>Technology Integration</h3>
           <p>
@@ -200,35 +187,36 @@
             View Projects <i class="fas fa-arrow-right"></i>
           </a>
         </div>
-      </div>
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          padding-right: 10px;
-          margin-top: 20px;
-        "
-      >
-        <a
-          href="one-link-projects.html"
-          class="btn"
-          aria-label="See more projects"
+
+        <div
           style="
-            display: inline-flex;
-            justify-content: center;
+            display: flex;
             align-items: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            margin-right: 10px;
+            justify-content: flex-end;
+            padding-right: 10px;
+            margin-top: 20px;
           "
         >
-          <i class="fas fa-project-diagram" style="font-size: 1.5rem"></i>
-        </a>
-        <span style="font-size: 1rem; color: whitesmoke">More Projects</span>
+          <a
+            href="one-link-projects.html"
+            class="btn"
+            aria-label="See more projects"
+            style="
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              color: white;
+              text-decoration: none;
+              margin-right: 10px;
+            "
+          >
+            <i class="fas fa-project-diagram" style="font-size: 1.5rem"></i>
+          </a>
+          <span style="font-size: 1rem; color: whitesmoke">More Projects</span>
+        </div>
       </div>
     </section>
 
@@ -280,7 +268,13 @@
       closeBtn.addEventListener("click", closeMenu);
       document.addEventListener("click", handleClickOutside);
     </script>
-
+    <script>
+      document.addEventListener("scroll", function () {
+        const parallax = document.querySelector(".parallax-portfolio");
+        const offset = window.pageYOffset;
+        parallax.style.backgroundPositionY = offset * 0.5 + "px"; // Adjust speed by changing 0.5
+      });
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
