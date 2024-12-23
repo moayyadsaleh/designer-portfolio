@@ -744,3 +744,148 @@ html {
 .project-card {
   text-align: center !important;
 }
+#parallax-container {
+  position: relative;
+  height: 500px; /* Adjust based on your layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Chat Container Styles */
+#chat-container {
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+  background: linear-gradient(90deg); /* Transparent gradient */
+  backdrop-filter: blur(10px); /* Adds a blur effect to the background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: hidden;
+  color: #fff; /* White text color for better contrast */
+}
+
+/* Chat Box Layout */
+#chat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Message Styles */
+.message {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 10px 15px;
+  border-radius: 12px;
+  max-width: 75%;
+  word-wrap: break-word;
+  position: relative;
+  animation: fadeIn 0.5s ease-out; /* Smooth animation for messages */
+  display: flex;
+  align-items: flex-start; /* Align image and text vertically */
+  flex-wrap: nowrap; /* Prevent text and image from wrapping */
+}
+
+/* Person 1 (left-aligned) */
+.person1 {
+  text-align: left;
+  color: #00d4ff; /* Light blue for Person 1 */
+  background: rgba(0, 212, 255, 0.1); /* Soft blue background */
+  align-self: flex-start;
+}
+
+/* Person 2 (right-aligned) */
+.person2 {
+  text-align: right;
+  color: #ff8c00; /* Bright orange for Person 2 */
+  background: rgba(255, 140, 0, 0.1); /* Soft orange background */
+  align-self: flex-end;
+}
+
+/* Profile Image Styling */
+.profile-img {
+  width: 40px; /* Adjust size of the image */
+  height: 40px; /* Make the image square */
+  border-radius: 50%; /* Makes the image circular */
+  margin-right: 10px; /* Adds space between image and text */
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Text and Caret Styling */
+.message span {
+  font-size: 16px; /* Adjust text size */
+  line-height: 1.5;
+  color: whitesmoke;
+}
+
+/* Styling for the blinking caret */
+.caret {
+  animation: blink 0.7s step-end infinite;
+}
+
+/* Animation for caret blinking */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Fade-in animation for messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for Responsiveness */
+
+/* For small screens (max-width: 600px) */
+@media (max-width: 600px) {
+  #chat-container {
+    padding: 15px;
+    max-width: 100%; /* Full width for smaller screens */
+  }
+
+  .message {
+    font-size: 1rem; /* Smaller font size */
+    padding: 8px 12px; /* Reduce padding */
+    max-width: 90%; /* Increase the message width */
+  }
+
+  .profile-img {
+    width: 35px; /* Smaller profile image */
+    height: 35px;
+    margin-right: 8px; /* Less space between image and text */
+  }
+}
+
+/* For extra small screens (max-width: 400px) */
+@media (max-width: 400px) {
+  #chat-container {
+    padding: 10px;
+    max-width: 100%; /* Full width for small screens */
+  }
+
+  .message {
+    font-size: 0.9rem; /* Even smaller font size */
+    padding: 6px 10px; /* Even smaller padding */
+  }
+
+  .profile-img {
+    width: 30px; /* Further reduced profile image size */
+    height: 30px;
+    margin-right: 5px; /* Reduce space */
+  }
+}
