@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empowering Corporate Excellence</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">Portfolio</div>
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #0e0e0e;
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      header {
+        height: 100vh;
+        background-image: url("pexels-assedrani-official-177638678-13249332 (1).jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 4rem;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      section {
+        padding: 5rem 2rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+      }
+
+      .project-card {
+        max-width: 600px;
+        backdrop-filter: blur(15px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        text-align: left;
+      }
+
+      .project-card h2 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+
+      .project-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #ccc;
+      }
+
+      .details-section {
+        padding: 4rem 2rem;
+        display: grid;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        background-image: url("details-section.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+      }
+
+      .detail-card {
+        backdrop-filter: blur(15px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        padding: 1.5rem;
+      }
+
+      .detail-card h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+        color: #fff;
+      }
+
+      .detail-card p {
+        color: #ccc;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      .buttons {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .buttons a {
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.75rem 1.5rem;
+        border-radius: 10px;
+      }
+
+      footer {
+        padding: 2rem;
+        text-align: center;
+        background: #1a1a1a;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Empowering Corporate Excellence</h1>
+    </header>
+
+    <section style="background-image: url('project-card-section.jpg')">
+      <div class="project-card">
+        <h2>A New Standard in Presentation Design</h2>
+        <p>
+          This project transformed outdated PowerPoint materials into clean,
+          modern designs. The focus: clarity, engagement, and an elevated
+          experience. Design techniques used can be ideal for curriculum,
+          instructor-led courses, and business presentations.
+        </p>
+      </div>
+    </section>
+
+    <section class="details-section">
+      <div class="detail-card">
+        <h3>What Was Done</h3>
+        <p>
+          Each slide was meticulously redesigned with a focus on clean layouts,
+          cohesive visuals, and intuitive flow.
+        </p>
+      </div>
+
+      <div class="detail-card">
+        <h3>Challenges Overcome</h3>
+        <p>
+          Transforming dense, text-heavy slides into concise and engaging
+          formats without losing essential information.
+        </p>
+      </div>
+
+      <div class="detail-card">
+        <h3>Key Highlights</h3>
+        <p>
+          The final designs integrate seamless transitions, bold graphics, and
+          an adaptable structure for various audiences.
+        </p>
+      </div>
+
+      <div class="buttons">
+        <a href="powerpoint-transformation.html" target="_blank">
+          <i class="fas fa-play-circle"></i> View the Work
+        </a>
+        <a href="corporate-training-projects.html">
+          <i class="fas fa-arrow-left"></i> Back
+        </a>
+      </div>
+    </section>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navList = document.getElementById("nav-list");
+      const closeBtn = document.getElementById("close-btn");
+
+      // Function to toggle menu visibility
+      const toggleMenu = (event) => {
+        navList.classList.toggle("show");
+        event.stopPropagation(); // Prevent click event from propagating to the document
+      };
+
+      // Function to close the menu
+      const closeMenu = () => {
+        navList.classList.remove("show");
+      };
+
+      // Close menu when clicking outside
+      const handleClickOutside = (event) => {
+        if (
+          !navList.contains(event.target) && // Click is outside navList
+          !menuToggle.contains(event.target) // Click is outside menuToggle
+        ) {
+          closeMenu();
+        }
+      };
+
+      // Event listeners
+      menuToggle.addEventListener("click", toggleMenu);
+      closeBtn.addEventListener("click", closeMenu);
+      document.addEventListener("click", handleClickOutside);
+    </script>
+    <script>
+      document.addEventListener("scroll", function () {
+        const parallax = document.querySelector(".parallax-portfolio");
+        const offset = window.pageYOffset;
+        parallax.style.backgroundPositionY = offset * 0.5 + "px"; // Adjust speed by changing 0.5
+      });
+    </script>
+    <footer>
+      <p>&copy; 2024 Empowering Corporate Excellence. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
