@@ -21,42 +21,25 @@ document.querySelectorAll(".show-more-btn").forEach((button) => {
 document.addEventListener("DOMContentLoaded", () => {
   const textContainer = document.getElementById("text-container");
 
-  const skills = [
-    "Simplify. Secure. Deliver.",
-    "Innovate. Build. Transform.",
-    "Design. Develop. Impact.",
-  ];
+  // Use only one message from the skills array
+  const skills = ["Simplify. Secure. Deliver."];
 
   let index = 0; // Current skill index
   let charIndex = 0; // Current character index
   const typingSpeed = 100; // Typing speed in milliseconds
-  const erasingSpeed = 50; // Erasing speed in milliseconds
-  const pauseBetweenSkills = 1500; // Pause before switching skills
 
   const type = () => {
     if (charIndex < skills[index].length) {
       textContainer.textContent += skills[index].charAt(charIndex);
       charIndex++;
       setTimeout(type, typingSpeed);
-    } else {
-      setTimeout(erase, pauseBetweenSkills);
     }
   };
 
-  const erase = () => {
-    if (charIndex > 0) {
-      textContainer.textContent = skills[index].substring(0, charIndex - 1);
-      charIndex--;
-      setTimeout(erase, erasingSpeed);
-    } else {
-      index = (index + 1) % skills.length; // Move to the next skill
-      setTimeout(type, typingSpeed);
-    }
-  };
-
-  // Start typing animation
+  // Start typing animation for the single message
   type();
 });
+
 document
   .getElementById("contactForm")
   .addEventListener("submit", async function (event) {
@@ -99,13 +82,13 @@ window.addEventListener("scroll", function () {
 const messages = [
   {
     user: "person1",
-    text: "Hi, what is your scope of work?",
+    text: "Hi, Moayyad! What is your scope of work?",
     profileImage:
       "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
   },
   {
     user: "person2",
-    text: "Hi, I specialize in instructional design, focusing on communication, productivity, and tech tools.",
+    text: "I create tech-driven solutions that solve complex problems, blending instructional design and adult learning theories.",
     profileImage: "Moayyad's Pic.png",
   },
   {
@@ -116,7 +99,12 @@ const messages = [
   },
   {
     user: "person2",
-    text: "I also create educational apps and tech solutions that help instructors improve their teaching experience.",
+    text: "I develop apps and tools that empower instructors to enhance their teaching and drive student success.",
+    profileImage: "Moayyad's Pic.png",
+  },
+  {
+    user: "person2",
+    text: "My expertise spans instructional design, tech solutions, and app development. I focus on creating impactful learning experiences that deliver results.",
     profileImage: "Moayyad's Pic.png",
   },
 ];

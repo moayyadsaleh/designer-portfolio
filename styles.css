@@ -776,8 +776,19 @@ html {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  max-height: 500px; /* Max height to allow scrolling */
+  overflow-y: auto; /* Allows scrolling when the content is too long */
+  padding-right: 5px; /* Prevents text from being cut off */
+}
+/* Hide the scrollbar */
+#chat-box::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
 }
 
+/* For Firefox */
+#chat-box {
+  scrollbar-width: none; /* Hides scrollbar for Firefox */
+}
 /* Message Styles */
 .message {
   font-size: 1.1rem;
