@@ -82,35 +82,35 @@ window.addEventListener("scroll", function () {
 const messages = [
   {
     user: "person1",
-    text: "Hey Moayyad! So, what exactly do you do?",
+    text: "Hey Moayyad, I heard you’re into solving real-life problems with tech. What do you focus on?",
     profileImage:
       "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
   },
   {
     user: "person2",
-    text: "Hey there! I design tech tools and apps that help instructors create better learning experiences. Think instructional design meets cutting-edge tech!",
+    text: "I specialize in instructional design and programming. My goal is to create tech-driven solutions that help people learn and grow.",
     profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person1",
-    text: "That’s cool! Can you give me an example?",
+    text: "That sounds interesting! So, you design courses too? How does tech play a role in that?",
     profileImage:
       "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
   },
   {
     user: "person2",
-    text: "Sure! I’m working on an app right now that helps instructors build activities based on transcription. It’s great for improving speaking and comprehension skills!",
+    text: "Yes! I build interactive learning experiences, using tech to make learning more effective and engaging. I also create tools that help instructors create dynamic content easily.",
     profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person1",
-    text: "Oh wow, that sounds really useful. What’s your ultimate goal with all this?",
+    text: "Nice! And programming—how does that come into play?",
     profileImage:
       "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
   },
   {
     user: "person2",
-    text: "To empower educators with tools that make learning more engaging and impactful. At the end of the day, it’s about making education better for everyone!",
+    text: "I develop custom applications to solve unique problems, whether it’s automating tasks or creating solutions that improve how we learn and work. Code is my way of making ideas come to life.",
     profileImage: "Moayyad's Pic.png",
   },
 ];
