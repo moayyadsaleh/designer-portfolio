@@ -178,5 +178,7 @@ function startChat() {
   showNextMessage(); // Start the typing effect
 }
 
-// Start the typing effect
-startChat();
+// Wait for the page to load before starting the chat
+document.addEventListener("DOMContentLoaded", () => {
+  startChat();
+});
