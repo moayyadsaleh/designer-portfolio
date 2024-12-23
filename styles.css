@@ -759,6 +759,8 @@ html {
   background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
   background: linear-gradient(90deg); /* Transparent gradient */
   backdrop-filter: blur(10px); /* Adds a blur effect to the background */
+  animation: gradientAnimation 5s ease infinite;
+  backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -768,7 +770,19 @@ html {
   flex-direction: column;
   gap: 15px;
   overflow: hidden;
-  color: #fff; /* White text color for better contrast */
+  color: #fff;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Chat Box Layout */
@@ -776,19 +790,19 @@ html {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-height: 500px; /* Max height to allow scrolling */
-  overflow-y: auto; /* Allows scrolling when the content is too long */
-  padding-right: 5px; /* Prevents text from being cut off */
-}
-/* Hide the scrollbar */
-#chat-box::-webkit-scrollbar {
-  display: none; /* Hides the scrollbar */
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 5px;
 }
 
-/* For Firefox */
-#chat-box {
-  scrollbar-width: none; /* Hides scrollbar for Firefox */
+#chat-box::-webkit-scrollbar {
+  display: none;
 }
+
+#chat-box {
+  scrollbar-width: none;
+}
+
 /* Message Styles */
 .message {
   font-size: 1.1rem;
@@ -798,50 +812,57 @@ html {
   max-width: 75%;
   word-wrap: break-word;
   position: relative;
-  animation: fadeIn 0.5s ease-out; /* Smooth animation for messages */
+  animation: fadeIn 0.5s ease-out;
   display: flex;
-  align-items: flex-start; /* Align image and text vertically */
-  flex-wrap: nowrap; /* Prevent text and image from wrapping */
+  align-items: flex-start;
 }
 
 /* Person 1 (left-aligned) */
 .person1 {
   text-align: left;
-  color: #00d4ff; /* Light blue for Person 1 */
-  background: rgba(0, 212, 255, 0.1); /* Soft blue background */
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.1);
   align-self: flex-start;
 }
 
-/* Person 2 (right-aligned) */
+/* Person 2 (starts right, aligns left after typing) */
 .person2 {
-  text-align: right;
-  color: #ff8c00; /* Bright orange for Person 2 */
-  background: rgba(255, 140, 0, 0.1); /* Soft orange background */
+  text-align: left;
+  color: #ff8c00;
+  background: rgba(255, 140, 0, 0.1);
   align-self: flex-end;
+  animation: slideInRight 0.5s forwards;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* Profile Image Styling */
 .profile-img {
-  width: 40px; /* Adjust size of the image */
-  height: 40px; /* Make the image square */
-  border-radius: 50%; /* Makes the image circular */
-  margin-right: 10px; /* Adds space between image and text */
-  flex-shrink: 0; /* Prevent image from shrinking */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  flex-shrink: 0;
 }
 
 /* Text and Caret Styling */
 .message span {
-  font-size: 16px; /* Adjust text size */
+  font-size: 16px;
   line-height: 1.5;
   color: whitesmoke;
 }
 
-/* Styling for the blinking caret */
 .caret {
   animation: blink 0.7s step-end infinite;
 }
 
-/* Animation for caret blinking */
 @keyframes blink {
   50% {
     opacity: 0;
@@ -860,43 +881,84 @@ html {
   }
 }
 
-/* Media Queries for Responsiveness */
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
 
-/* For small screens (max-width: 600px) */
-@media (max-width: 600px) {
-  #chat-container {
-    padding: 15px;
-    max-width: 100%; /* Full width for smaller screens */
+.typing-indicator span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  animation: typingBlink 1s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBlink {
+  0%,
+  100% {
+    opacity: 0.3;
   }
-
-  .message {
-    font-size: 1rem; /* Smaller font size */
-    padding: 8px 12px; /* Reduce padding */
-    max-width: 90%; /* Increase the message width */
-  }
-
-  .profile-img {
-    width: 35px; /* Smaller profile image */
-    height: 35px;
-    margin-right: 8px; /* Less space between image and text */
+  50% {
+    opacity: 1;
   }
 }
 
-/* For extra small screens (max-width: 400px) */
-@media (max-width: 400px) {
+/* Timestamp Styling */
+.timestamp {
+  font-size: 0.7rem; /* Smaller timestamp size */
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 5px;
+  display: none; /* Hide timestamp initially */
+  text-align: right;
+}
+
+.message.show-timestamp .timestamp {
+  display: block; /* Show timestamp when typing is done */
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
   #chat-container {
-    padding: 10px;
-    max-width: 100%; /* Full width for small screens */
+    padding: 15px;
+    max-width: 100%;
   }
 
   .message {
-    font-size: 0.9rem; /* Even smaller font size */
-    padding: 6px 10px; /* Even smaller padding */
+    font-size: 1rem;
+    padding: 8px 12px;
+    max-width: 90%;
   }
 
   .profile-img {
-    width: 30px; /* Further reduced profile image size */
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 400px) {
+  #chat-container {
+    padding: 10px;
+  }
+
+  .message {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  .profile-img {
+    width: 30px;
     height: 30px;
-    margin-right: 5px; /* Reduce space */
   }
 }

@@ -82,29 +82,35 @@ window.addEventListener("scroll", function () {
 const messages = [
   {
     user: "person1",
-    text: "Hi, Moayyad! What is your scope of work?",
+    text: "Hey Moayyad! So, what exactly do you do?",
     profileImage:
       "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
   },
   {
     user: "person2",
-    text: "I create tech-driven solutions that solve complex problems, blending instructional design and adult learning theories.",
+    text: "Hey there! I design tech tools and apps that help instructors create better learning experiences. Think instructional design meets cutting-edge tech!",
     profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person1",
-    text: "What else?",
+    text: "That’s cool! Can you give me an example?",
     profileImage:
       "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
   },
   {
     user: "person2",
-    text: "I develop apps and tools that empower instructors to enhance their teaching and drive student success.",
+    text: "Sure! I’m working on an app right now that helps instructors build activities based on transcription. It’s great for improving speaking and comprehension skills!",
     profileImage: "Moayyad's Pic.png",
   },
   {
+    user: "person1",
+    text: "Oh wow, that sounds really useful. What’s your ultimate goal with all this?",
+    profileImage:
+      "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
+  },
+  {
     user: "person2",
-    text: "My expertise spans instructional design, tech solutions, and app development. I focus on creating impactful learning experiences that deliver results.",
+    text: "To empower educators with tools that make learning more engaging and impactful. At the end of the day, it’s about making education better for everyone!",
     profileImage: "Moayyad's Pic.png",
   },
 ];
@@ -116,57 +122,74 @@ function typeMessage(message, callback) {
   const messageElement = document.createElement("div");
   messageElement.classList.add("message", message.user);
 
-  // Create image element and append to messageElement
   const imgElement = document.createElement("img");
   imgElement.src = message.profileImage;
   imgElement.alt = "Profile Image";
-  imgElement.classList.add("profile-img"); // Optional: Add a class for styling
+  imgElement.classList.add("profile-img");
   messageElement.appendChild(imgElement);
 
-  // Create a span to hold the text, initially empty for typing effect
   const textElement = document.createElement("span");
   messageElement.appendChild(textElement);
 
+  const timestamp = document.createElement("span");
+  timestamp.classList.add("timestamp");
+  const now = new Date();
+  timestamp.textContent = now.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  messageElement.appendChild(timestamp);
+
   let index = 0;
-  const typingSpeed = 50; // Adjusted speed for faster typing
-  const caretElement = document.createElement("span"); // This will simulate the typing cursor
-  caretElement.classList.add("caret");
-  messageElement.appendChild(caretElement);
+  const typingSpeed = 50;
 
   let typingInterval = setInterval(() => {
     textElement.innerHTML =
-      message.text.substring(0, index) + "<span class='caret'>|</span>"; // Adds a blinking caret
+      message.text.substring(0, index) + "<span class='caret'>|</span>";
     index++;
     if (index > message.text.length) {
       clearInterval(typingInterval);
-      caretElement.style.visibility = "hidden"; // Hide caret (in case of visibility control)
       setTimeout(() => {
-        messageElement.removeChild(caretElement); // Remove caret after a short delay
-        callback(); // Call the callback when typing is complete
-      }, 200); // Small delay before removing the caret
+        messageElement.querySelector(".caret").style.visibility = "hidden";
+        callback();
+      }, 200);
     }
   }, typingSpeed);
 
   chatBox.appendChild(messageElement);
+  chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: "smooth" });
+}
+
+function showTypingIndicator() {
+  const typingIndicator = document.createElement("div");
+  typingIndicator.classList.add("typing-indicator");
+  typingIndicator.innerHTML = "<span></span><span></span><span></span>";
+  chatBox.appendChild(typingIndicator);
+
+  setTimeout(() => {
+    chatBox.removeChild(typingIndicator);
+  }, 1000);
 }
 
 function startChat() {
-  chatBox.innerHTML = ""; // Clear the chat box before starting
-  currentMessageIndex = 0; // Reset the message index
+  chatBox.innerHTML = "";
+  currentMessageIndex = 0;
 
   function showNextMessage() {
     if (currentMessageIndex < messages.length) {
-      typeMessage(messages[currentMessageIndex], () => {
-        currentMessageIndex++;
-        setTimeout(showNextMessage, 1000); // Slight pause between messages for realism
-      });
+      showTypingIndicator();
+      setTimeout(() => {
+        typeMessage(messages[currentMessageIndex], () => {
+          currentMessageIndex++;
+          setTimeout(showNextMessage, 1000);
+        });
+      }, 1000);
     }
   }
 
-  showNextMessage(); // Start the typing effect
+  showNextMessage();
 }
 
-// Wait for the page to load before starting the chat
 document.addEventListener("DOMContentLoaded", () => {
   startChat();
 });
