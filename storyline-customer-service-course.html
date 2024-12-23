@@ -160,12 +160,12 @@
 
     <section style="background-image: url('project-card-section.jpg')">
       <div class="project-card">
-        <h2>A New Standard in Presentation Design</h2>
+        <h2>Exceptional Customer Service Training</h2>
         <p>
-          In this project, I transformed outdated PowerPoint materials into
-          clean, modern designs. The focus: clarity, engagement, and an elevated
-          experience. Design techniques used can be ideal for curriculum,
-          instructor-led courses, and business presentations.
+          I developed this course using Articulate Storyline on customer service
+          excellence. Through engaging modules, employees learn techniques to
+          elevate interactions, resolve challenges efficiently, and create
+          memorable customer experiences.
         </p>
       </div>
     </section>
@@ -174,30 +174,31 @@
       <div class="detail-card">
         <h3>What Was Done</h3>
         <p>
-          Each slide was meticulously redesigned with a focus on clean layouts,
-          cohesive visuals, and intuitive flow.
+          Designed interactive and scenario-based learning modules, focusing on
+          real-world applications of exceptional customer service principles.
+          Used adult learning theories and instructional design principles.
         </p>
       </div>
 
       <div class="detail-card">
         <h3>Challenges Overcome</h3>
         <p>
-          Transforming dense, text-heavy slides into concise and engaging
-          formats without losing essential information.
+          Ensuring the course remained engaging while addressing a wide range of
+          customer scenarios and aligning with diverse learning styles.
         </p>
       </div>
 
       <div class="detail-card">
         <h3>Key Highlights</h3>
         <p>
-          The final designs integrate seamless transitions, bold graphics, and
-          an adaptable structure for various audiences.
+          Dynamic visuals, adaptive feedback, and practical exercises ensure
+          learners can confidently implement best practices in customer service.
         </p>
       </div>
 
       <div class="buttons">
-        <a href="powerpoint-transformation.html" target="_blank">
-          <i class="fas fa-play-circle"></i> View the Work
+        <a href="customer-service-course.html" target="_blank">
+          <i class="fas fa-play-circle"></i> View the Course
         </a>
         <a href="corporate-training-projects.html">
           <i class="fas fa-arrow-left"></i> Back
@@ -209,28 +210,24 @@
       const navList = document.getElementById("nav-list");
       const closeBtn = document.getElementById("close-btn");
 
-      // Function to toggle menu visibility
       const toggleMenu = (event) => {
         navList.classList.toggle("show");
-        event.stopPropagation(); // Prevent click event from propagating to the document
+        event.stopPropagation();
       };
 
-      // Function to close the menu
       const closeMenu = () => {
         navList.classList.remove("show");
       };
 
-      // Close menu when clicking outside
       const handleClickOutside = (event) => {
         if (
-          !navList.contains(event.target) && // Click is outside navList
-          !menuToggle.contains(event.target) // Click is outside menuToggle
+          !navList.contains(event.target) &&
+          !menuToggle.contains(event.target)
         ) {
           closeMenu();
         }
       };
 
-      // Event listeners
       menuToggle.addEventListener("click", toggleMenu);
       closeBtn.addEventListener("click", closeMenu);
       document.addEventListener("click", handleClickOutside);
@@ -239,7 +236,7 @@
       document.addEventListener("scroll", function () {
         const parallax = document.querySelector(".parallax-portfolio");
         const offset = window.pageYOffset;
-        parallax.style.backgroundPositionY = offset * 0.5 + "px"; // Adjust speed by changing 0.5
+        parallax.style.backgroundPositionY = offset * 0.5 + "px";
       });
     </script>
     <footer>
