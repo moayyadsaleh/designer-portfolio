@@ -196,36 +196,54 @@
           </a>
         </div>
       </div>
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          padding-right: 10px;
-          margin-top: 20px;
-        "
-      >
-        <a
-          href="one-link-projects.html"
-          class="btn"
-          aria-label="See more projects"
+      <div style="margin-top: 40px; text-align: center">
+        <div
           style="
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            margin-right: 10px;
+            display: inline-block;
+            padding: 20px 30px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
           "
+          onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.3)';"
+          onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.2)';"
         >
-          <i class="fas fa-project-diagram" style="font-size: 1.5rem"></i>
-        </a>
-        <span style="font-size: 1rem; color: whitesmoke"
-          >Creative Experiments</span
-        >
+          <i
+            class="fas fa-lightbulb"
+            style="
+              font-size: 2rem;
+              color: white;
+              margin-bottom: 10px;
+              animation: glow 2s infinite;
+            "
+          ></i>
+          <p
+            style="
+              font-size: 1.2rem;
+              color: white;
+              font-weight: 600;
+              margin: 10px 0 0;
+            "
+          >
+            More Creative Experiments
+          </p>
+          <a
+            href="one-link-projects.html"
+            style="
+              display: block;
+              margin-top: 10px;
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 1rem;
+              font-weight: 500;
+              text-transform: uppercase;
+            "
+          >
+            Explore Now →
+          </a>
+        </div>
       </div>
     </section>
 
