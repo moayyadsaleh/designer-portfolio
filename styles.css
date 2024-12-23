@@ -720,3 +720,23 @@ html {
       0 0 20px rgba(0, 212, 255, 0.6), 0 0 30px rgba(0, 212, 255, 0.5);
   }
 }
+
+.project .btn-icon {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #28a745; /* Green for distinction */
+  border-radius: 50%;
+}
+
+.project .btn-icon:hover {
+  background-color: #1c7430;
+}
+
+.project .btn-icon i {
+  font-size: 15px;
+  color: #fff;
+}
