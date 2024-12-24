@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tools, Automation & Problem-Solving</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Hero Section with Parallax */
+      .parallax-hero {
+        min-height: 100vh; /* Full viewport height for a better scrolling experience */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: url("pexels-nextvoyage-1470405 (1).jpg") center/cover
+          no-repeat;
+        color: #fff;
+        padding: 4rem 2rem;
+        backdrop-filter: blur(10px);
+      }
+      /* Default Parallax */
+      .parallax-hero,
+      .parallax-section {
+        background-attachment: fixed;
+      }
+
+      /* Mobile Fix */
+      @media (max-width: 768px) {
+        .parallax-hero,
+        .parallax-section {
+          background-attachment: scroll;
+          background-position: center;
+          background-size: cover;
+        }
+      }
+      .parallax-hero p {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+
+      /* Portfolio Section with Parallax */
+      .parallax-section {
+        min-height: 100vh; /* Full viewport height for consistency */
+        padding: 4rem 2rem;
+        background: url("pexels-peng-liu-45946-169647 (1).jpg") center/cover
+          no-repeat;
+        color: #fff;
+        backdrop-filter: blur(10px);
+      }
+
+      /* Parallax Background */
+      .parallax-hero,
+      .parallax-section {
+        position: relative;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      /* Add overlay for better text visibility */
+      .parallax-hero::after,
+      .parallax-section::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+        z-index: 1;
+      }
+
+      /* Ensure text content is above overlay */
+      .parallax-hero > *,
+      .parallax-section > * {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Portfolio Gallery */
+      .portfolio-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .project {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      }
+
+      .project p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn {
+        display: inline-block;
+        background: linear-gradient(90deg, #00d4ff, #00ff8c);
+        color: #000;
+        padding: 0.7rem 1.3rem;
+        border-radius: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 255, 140, 0.5);
+      }
+
+      /* Back to Portfolio Button */
+      .back-to-portfolio {
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        font-size: 0.9rem;
+        color: #ccc;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-list {
+          display: flex;
+          flex-direction: column;
+          position: static;
+          background: none;
+          width: auto;
+          padding: 0;
+          border-radius: 0;
+        }
+
+        .nav-list li {
+          margin: 1rem 0;
+        }
+
+        .menu-toggle,
+        .close-btn {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .live-demo {
+          font-size: 1rem;
+          padding: 0.7rem 1.2rem;
+        }
+
+        .project-visual {
+          height: 200px;
+          font-size: 1.2rem;
+        }
+
+        section h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+        <!-- Navigation -->
+        <nav>
+          <div class="logo">Portfolio</div>
+          <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-list" id="nav-list">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li>
+              <button class="close-btn" id="close-btn">
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+          </ul>
+          <button class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+        </nav>
+    
+        <!-- Hero Section -->
+        <header class="hero parallax-hero">
+          <h1>Data Tools for Innovation</h1>
+          <p>Automate. Analyze. Solve.</p>
+        </header>
+    
+        <!-- Portfolio Section -->
+        <section id="tools-projects" class="parallax-section">
+          <div class="portfolio-gallery">
+            <div class="project">
+              <h3>Data Visualizer: Simplifying Insights</h3>
+              <p>
+                A web-based tool designed to transform raw datasets into interactive
+                and dynamic charts, perfect for quick data analysis and reporting.
+              </p>
+              <a
+                href="https://moayyadsaleh.github.io/training-data-visualizer-analyzer/"
+                class="btn"
+              >
+                Live Demo <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a
+                href="data-analysis-and-visualization.html"
+                class="btn btn-icon"
+                title="Click to view more details about this project"
+              >
+                <i class="fas fa-info-circle glow"></i>
+              </a>
+            </div>
+            <div class="project">
+                <h3>Real-Time Collaboration Tool</h3>
+                <p>
+                  Enhance teamwork with instant collaboration. This tool enables real-time content editing, feedback exchange, and seamless communication, making it ideal for teams and remote work environments.
+                </p>
+                <a href="https://moayyadsaleh.github.io/real-time-collaboration-feedback-sharing/" class="btn">
+                  Live Demo <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a
+                  href="real-time-collaboration.html"
+                  class="btn btn-icon"
+                  title="Click to view more details about this project"
+                >
+                  <i class="fas fa-info-circle glow"></i>
+                </a>
+              </div>
+              
+    
+            <div class="project">
+              <h3>Problem-Solving Assistant</h3>
+              <p>
+                An intelligent assistant that helps developers debug code, optimize
+                algorithms, and improve efficiency in any environment.
+              </p>
+              <a
+                href="https://example.com/problem-solving-assistant"
+                class="btn"
+              >
+                Live Demo <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a
+                href="problem-solving-assistant-details.html"
+                class="btn btn-icon"
+                title="Click to view more details about this project"
+              >
+                <i class="fas fa-info-circle glow"></i>
+              </a>
+            </div>
+          </div>
+          <div style="margin-top: 40px; text-align: center">
+            <div
+              style="
+                display: inline-block;
+                padding: 20px 30px;
+                background: linear-gradient(45deg, #6a11cb, #2575fc);
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+              "
+              onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.3)';"
+              onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.2)';"
+            >
+              <i
+                class="fas fa-lightbulb"
+                style="
+                  font-size: 2rem;
+                  color: white;
+                  margin-bottom: 10px;
+                  animation: glow 2s infinite;
+                "
+              ></i>
+              <p
+                style="
+                  font-size: 1.2rem;
+                  color: white;
+                  font-weight: 600;
+                  margin: 10px 0 0;
+                "
+              >
+                Want More Tools for Automation and Innovation?
+              </p>
+              <a
+                href="explore-tools.html"
+                style="
+                  display: block;
+                  margin-top: 10px;
+                  color: #ffffff;
+                  text-decoration: none;
+                  font-size: 1rem;
+                  font-weight: 500;
+                  text-transform: uppercase;
+                "
+              >
+                Explore Now →
+              </a>
+            </div>
+          </div>
+          <!-- Back to Portfolio Button -->
+          <div class="back-to-portfolio">
+            <a href="index.html#portfolio" class="btn">
+              <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+          </div>
+        </section>
+    
+        <script>
+          // Parallax effect for mobile and desktop
+          function parallaxEffect() {
+            const parallaxElements = document.querySelectorAll(
+              ".parallax-hero, .parallax-section"
+            );
+            parallaxElements.forEach((el) => {
+              const offset = window.pageYOffset;
+              el.style.backgroundPositionY = offset * 0.5 + "px";
+            });
+          }
+    
+          window.addEventListener("scroll", parallaxEffect);
+        </script>
+        <footer>
+          <p>&copy; 2024 Tools Portfolio: Automation & Problem-Solving</p>
+        </footer>
+      </body>
+</html>
