@@ -171,6 +171,21 @@ function showTypingIndicator() {
   }, 1000);
 }
 
+// NEW FUNCTION TO HANDLE CHAT END
+function endChat() {
+  const chatContainer = document.getElementById("chat-container");
+  chatContainer.classList.add("fade-out");
+
+  // After fade-out completes, remove the chat and reveal expertise
+  setTimeout(() => {
+    chatContainer.remove(); // Removes the entire chat container from the DOM
+
+    const expertiseContainer = document.getElementById("expertise-container");
+    expertiseContainer.classList.remove("hidden");
+    expertiseContainer.classList.add("cinematic-reveal");
+  }, 2000);
+}
+
 function startChat() {
   chatBox.innerHTML = "";
   currentMessageIndex = 0;
@@ -184,6 +199,9 @@ function startChat() {
           setTimeout(showNextMessage, 1000);
         });
       }, 1000);
+    } else {
+      // Once all messages have been shown, trigger the end of chat
+      setTimeout(endChat, 1500);
     }
   }
 
@@ -192,4 +210,29 @@ function startChat() {
 
 document.addEventListener("DOMContentLoaded", () => {
   startChat();
+});
+// Toggle the hidden qualifications when button is clicked
+document.addEventListener("DOMContentLoaded", () => {
+  const showQualBtn = document.getElementById("show-qualifications-btn");
+  const qualifications = document.getElementById("qualifications");
+
+  showQualBtn.addEventListener("click", () => {
+    // If qualifications are hidden, show them
+    if (
+      qualifications.style.display === "none" ||
+      qualifications.style.display === ""
+    ) {
+      qualifications.style.display = "block";
+      // Optionally, re-trigger the fade-in animation:
+      qualifications.style.animation = "fadeInQual 1s forwards";
+      showQualBtn.innerHTML =
+        '<i class="fas fa-user-graduate"></i> Hide Qualifications';
+    }
+    // If they're visible, hide them
+    else {
+      qualifications.style.display = "none";
+      showQualBtn.innerHTML =
+        '<i class="fas fa-user-graduate"></i> Show Qualifications';
+    }
+  });
 });
