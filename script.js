@@ -82,35 +82,35 @@ window.addEventListener("scroll", function () {
 const messages = [
   {
     user: "person1",
-    text: "Hey Moayyad, I heard you’re into solving real-life problems with tech. What do you focus on?",
+    text: "Hey, I heard you have a knack for tech. What do you focus on?",
     profileImage:
       "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
   },
   {
     user: "person2",
-    text: "I specialize in instructional design and programming. My goal is to create tech-driven solutions that help people learn and grow.",
+    text: "I combine instructional design, programming, and creative problem-solving. It’s all about turning ideas into real-world solutions.",
     profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person1",
-    text: "That sounds interesting! So, you design courses too? How does tech play a role in that?",
+    text: "That’s neat. How do you typically tackle problems?",
     profileImage:
       "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
   },
   {
     user: "person2",
-    text: "Yes! I build interactive learning experiences, using tech to make learning more effective and engaging. I also create tools that help instructors create dynamic content easily.",
+    text: "I keep it simple: define the challenge, leverage the right tech, and deliver a streamlined user experience.",
     profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person1",
-    text: "Nice! And programming—how does that come into play?",
+    text: "Makes sense. So you’re big on programming, right?",
     profileImage:
       "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
   },
   {
     user: "person2",
-    text: "I develop custom applications to solve unique problems, whether it’s automating tasks or creating solutions that improve how we learn and work. Code is my way of making ideas come to life.",
+    text: "Absolutely. I build custom apps, design interactive learning, and adapt solutions for any environment.",
     profileImage: "Moayyad's Pic.png",
   },
 ];

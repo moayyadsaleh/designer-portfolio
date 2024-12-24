@@ -942,7 +942,6 @@ html {
 
 /* Main container styling */
 #expertise-container {
-  /* Soft, modern gradient background */
   background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 0.7),
@@ -952,13 +951,17 @@ html {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
 
-  /* Centering and sizing */
+  /* Centering & sizing */
   max-width: 450px;
-  margin: 60px auto; /* Plenty of vertical breathing room */
+  margin: 60px auto;
   padding: 25px;
   color: #fff;
-  text-align: center;
+  text-align: left;
   transition: all 1.5s ease;
+
+  /* KEY: Move the container up */
+  position: relative;
+  top: -200px; /* Adjust this negative value as desired */
 }
 
 /* Remove bullet points and spacing on lists */
@@ -1007,7 +1010,12 @@ html {
     transform: translateY(0);
   }
 }
-
+/* A cool line between each paragraph (except the first) */
+#qualifications p + p {
+  border-top: 1px dashed #ffa500; /* Dashed orange line */
+  padding-top: 20px; /* Space below the line */
+  margin-top: 20px;
+}
 /* Button styling */
 .cool-button {
   background-color: #ffa500;
@@ -1101,4 +1109,9 @@ html {
     width: 30px;
     height: 30px;
   }
+}
+/* Make the icons the same accent color */
+#qualifications p i {
+  color: #ffa500;
+  margin-right: 8px; /* spacing after the icon */
 }
