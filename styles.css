@@ -689,23 +689,6 @@ html {
   font-size: 1.5rem;
 }
 
-/* Video container styling */
-#video-container {
-  position: relative;
-  width: 80%; /* Adjust as needed */
-  max-width: 800px;
-  margin: 20px auto;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-#video-container video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 @keyframes glow {
   0% {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
