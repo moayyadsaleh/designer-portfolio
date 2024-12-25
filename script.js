@@ -82,35 +82,18 @@ window.addEventListener("scroll", function () {
 const messages = [
   {
     user: "person1",
-    text: "Hey, I heard you have a knack for tech. What do you focus on?",
+    text: "Hey Moayyad, I heard you’re into tech. What’s your focus?",
     profileImage:
       "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
   },
   {
     user: "person2",
-    text: "I combine instructional design, programming, and creative problem-solving. It’s all about turning ideas into real-world solutions.",
+    text: "I solve problems through tech by combining instructional design, programming, and creative solutions.",
     profileImage: "Moayyad's Pic.png",
   },
   {
-    user: "person1",
-    text: "That’s neat. How do you typically tackle problems?",
-    profileImage:
-      "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
-  },
-  {
     user: "person2",
-    text: "I keep it simple: define the challenge, leverage the right tech, and deliver a streamlined user experience.",
-    profileImage: "Moayyad's Pic.png",
-  },
-  {
-    user: "person1",
-    text: "Makes sense. So you’re big on programming, right?",
-    profileImage:
-      "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
-  },
-  {
-    user: "person2",
-    text: "Absolutely. I build custom apps, design interactive learning, and adapt solutions for any environment.",
+    text: "I build apps, create interactive learning tools, and make education smarter with technology.",
     profileImage: "Moayyad's Pic.png",
   },
 ];
@@ -141,7 +124,7 @@ function typeMessage(message, callback) {
   messageElement.appendChild(timestamp);
 
   let index = 0;
-  const typingSpeed = 50;
+  const typingSpeed = 100; // Slower typing speed (100ms per character)
 
   let typingInterval = setInterval(() => {
     textElement.innerHTML =
@@ -196,9 +179,10 @@ function startChat() {
       setTimeout(() => {
         typeMessage(messages[currentMessageIndex], () => {
           currentMessageIndex++;
-          setTimeout(showNextMessage, 1000);
+          // Add a 2-second pause before showing the next message
+          setTimeout(showNextMessage, 2000);
         });
-      }, 1000);
+      }, 1000); // Typing indicator delay
     } else {
       // Once all messages have been shown, trigger the end of chat
       setTimeout(endChat, 1500);
