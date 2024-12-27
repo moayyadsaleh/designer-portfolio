@@ -230,9 +230,18 @@ const sendChatBtn = document.getElementById("send-chat");
 const chatInput = document.getElementById("chat-input");
 const chatMessages = document.getElementById("chatbot-messages");
 
+// Flag to check if welcome message has been sent
+let isWelcomeSent = false;
+
 // Open Chatbot
 openChatbotBtn.addEventListener("click", () => {
   chatbotContainer.style.display = "flex";
+
+  // Send welcome message if not already sent
+  if (!isWelcomeSent) {
+    sendWelcomeMessage();
+    isWelcomeSent = true;
+  }
 });
 
 // Close Chatbot
@@ -243,29 +252,32 @@ closeChatbotBtn.addEventListener("click", () => {
 // Send Chat Message
 sendChatBtn.addEventListener("click", sendMessage);
 chatInput.addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" && !e.shiftKey) {
+    // Allow line breaks with Shift+Enter
+    e.preventDefault();
     sendMessage();
   }
 });
 
+// Function to send user message
 function sendMessage() {
   const message = chatInput.value.trim();
   if (message === "") return;
 
-  appendMessage(message, "person1");
+  appendMessage(message, "Person1");
   chatInput.value = "";
+  adjustTextareaHeight();
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
   // Show loading indicator
   const loadingDiv = document.createElement("div");
   loadingDiv.classList.add("message", "loading");
-  loadingDiv.textContent = "Loading...";
+  loadingDiv.innerHTML = `<span>Typing</span>`;
   chatMessages.appendChild(loadingDiv);
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
   // Send message to backend
   fetch("http://localhost:5000/api/chat", {
-    // Use your backend URL
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -294,9 +306,40 @@ function sendMessage() {
     });
 }
 
+// Function to append messages to chat
 function appendMessage(message, sender) {
   const messageDiv = document.createElement("div");
   messageDiv.classList.add("message", sender);
-  messageDiv.textContent = message;
+
+  if (sender === "Person2" && message.includes("moayyad")) {
+    // If the message is from the assistant and mentions your name, you might want to style it differently
+    messageDiv.innerHTML = `<strong>${message}</strong>`;
+  } else {
+    messageDiv.textContent = message;
+  }
+
   chatMessages.appendChild(messageDiv);
 }
+
+// Function to send welcome message
+function sendWelcomeMessage() {
+  const welcomeText =
+    "Hello! I’m Moayyad’s Virtual Twin – designed to be smart, capable, and always ready to chat with you!";
+
+  appendMessage(welcomeText, "Person2");
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Function to adjust textarea height dynamically
+function adjustTextareaHeight() {
+  chatInput.style.height = "auto"; // Reset height
+  chatInput.style.height = `${chatInput.scrollHeight}px`; // Set new height
+}
+
+// Initialize textarea height on page load
+document.addEventListener("DOMContentLoaded", () => {
+  adjustTextareaHeight();
+});
+
+// Event listener for input to adjust height dynamically
+chatInput.addEventListener("input", adjustTextareaHeight);
