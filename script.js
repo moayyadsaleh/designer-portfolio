@@ -220,3 +220,83 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+// script.js
+
+// Chatbot Functionality
+const openChatbotBtn = document.getElementById("open-chatbot");
+const chatbotContainer = document.getElementById("chatbot-container");
+const closeChatbotBtn = document.getElementById("close-chatbot");
+const sendChatBtn = document.getElementById("send-chat");
+const chatInput = document.getElementById("chat-input");
+const chatMessages = document.getElementById("chatbot-messages");
+
+// Open Chatbot
+openChatbotBtn.addEventListener("click", () => {
+  chatbotContainer.style.display = "flex";
+});
+
+// Close Chatbot
+closeChatbotBtn.addEventListener("click", () => {
+  chatbotContainer.style.display = "none";
+});
+
+// Send Chat Message
+sendChatBtn.addEventListener("click", sendMessage);
+chatInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
+
+function sendMessage() {
+  const message = chatInput.value.trim();
+  if (message === "") return;
+
+  appendMessage(message, "person1");
+  chatInput.value = "";
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  // Show loading indicator
+  const loadingDiv = document.createElement("div");
+  loadingDiv.classList.add("message", "loading");
+  loadingDiv.textContent = "Loading...";
+  chatMessages.appendChild(loadingDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  // Send message to backend
+  fetch("http://localhost:5000/api/chat", {
+    // Use your backend URL
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ message }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // Remove loading indicator
+      chatMessages.removeChild(loadingDiv);
+
+      if (data.reply) {
+        appendMessage(data.reply, "Person2");
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      } else if (data.error) {
+        appendMessage(`Error: ${data.error}`, "Person2");
+      } else {
+        appendMessage("Sorry, I could not process that.", "Person2");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      // Remove loading indicator
+      chatMessages.removeChild(loadingDiv);
+      appendMessage("Sorry, something went wrong.", "Person2");
+    });
+}
+
+function appendMessage(message, sender) {
+  const messageDiv = document.createElement("div");
+  messageDiv.classList.add("message", sender);
+  messageDiv.textContent = message;
+  chatMessages.appendChild(messageDiv);
+}
