@@ -1728,3 +1728,6 @@ body.light-mode .hidden-qualifications.show {
     transform: translateY(0);
   }
 }
+html {
+  scroll-behavior: smooth;
+}

@@ -114,17 +114,17 @@ const messages = [
   {
     user: "person2",
     text: "I’m an instructional designer and software engineer who uses programming to solve complex challenges.",
-    profileImage: "fullFormalSuite111.png",
+    profileImage: "fullFormalSuite111-removebg-preview.png",
   },
   {
     user: "person2",
     text: "I specialize in building tools, analyzing data, and automating workflows to save time and effort.",
-    profileImage: "fullFormalSuite111.png",
+    profileImage: "fullFormalSuite111-removebg-preview.png",
   },
   {
     user: "person2",
     text: "I bring ideas to life by creating functional apps, websites, and intelligent online solutions.",
-    profileImage: "fullFormalSuite111.png",
+    profileImage: "fullFormalSuite111-removebg-preview.png",
   },
 ];
 
