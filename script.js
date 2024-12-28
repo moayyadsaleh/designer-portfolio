@@ -277,7 +277,7 @@ function sendMessage() {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
   // Send message to backend
-  fetch("http://localhost:5000/api/chat", {
+  fetch("https://backend-portfolio-22x2.onrender.com/api/chat", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
