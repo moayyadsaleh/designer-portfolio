@@ -113,13 +113,18 @@ const messages = [
   },
   {
     user: "person2",
-    text: "I solve problems through tech by combining instructional design, programming, and creative solutions.",
-    profileImage: "Moayyad's Pic.png",
+    text: "I’m an instructional designer and software engineer who uses programming to solve complex challenges.",
+    profileImage: "fullFormalSuite111.png",
   },
   {
     user: "person2",
-    text: "I build apps, create interactive learning tools, and make education smarter with technology.",
-    profileImage: "Moayyad's Pic.png",
+    text: "I specialize in building tools, analyzing data, and automating workflows to save time and effort.",
+    profileImage: "fullFormalSuite111.png",
+  },
+  {
+    user: "person2",
+    text: "I bring ideas to life by creating functional apps, websites, and intelligent online solutions.",
+    profileImage: "fullFormalSuite111.png",
   },
 ];
 
