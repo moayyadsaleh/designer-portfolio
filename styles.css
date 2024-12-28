@@ -1731,21 +1731,17 @@ body.light-mode .hidden-qualifications.show {
 html {
   scroll-behavior: smooth;
 }
-html,
-body {
+body,
+html {
   height: 100%;
-  overflow-x: hidden;
+  margin: 0;
+  overflow: auto; /* Allow scrolling */
 }
 
 #home {
-  height: 100vh; /* Full viewport height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+  min-height: 100%; /* Fullscreen height */
 }
-
-.section {
-  min-height: 100vh;
+.scrollable-content {
+  height: 200vh; /* Twice the viewport height */
+  background: linear-gradient(to bottom, #00d4ff, #00ff8c);
 }

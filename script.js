@@ -373,13 +373,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Event listener for input to adjust height dynamically
 chatInput.addEventListener("input", adjustTextareaHeight);
-document.addEventListener("scroll", () => {
-  const navbar = document.querySelector("nav");
-  if (window.scrollY > 10) {
-    navbar.style.background = "rgba(0, 0, 0, 0.8)"; // Make navbar opaque on scroll
-    navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
-  } else {
-    navbar.style.background = "transparent"; // Keep navbar transparent at the top
-    navbar.style.boxShadow = "none";
-  }
-});
