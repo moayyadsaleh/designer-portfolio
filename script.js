@@ -252,6 +252,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // script.js
 
+// script.js
+
 // Chatbot Functionality
 const openChatbotBtn = document.getElementById("open-chatbot");
 const chatbotContainer = document.getElementById("chatbot-container");
@@ -262,6 +264,9 @@ const chatMessages = document.getElementById("chatbot-messages");
 
 // Flag to check if welcome message has been sent
 let isWelcomeSent = false;
+
+// Load chat history from localStorage
+loadChatHistory();
 
 // Open Chatbot
 openChatbotBtn.addEventListener("click", () => {
@@ -295,6 +300,7 @@ function sendMessage() {
   if (message === "") return;
 
   appendMessage(message, "Person1");
+  saveMessage(message, "Person1");
   chatInput.value = "";
   adjustTextareaHeight();
   chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -321,18 +327,25 @@ function sendMessage() {
 
       if (data.reply) {
         appendMessage(data.reply, "Person2");
+        saveMessage(data.reply, "Person2");
         chatMessages.scrollTop = chatMessages.scrollHeight;
       } else if (data.error) {
-        appendMessage(`Error: ${data.error}`, "Person2");
+        const errorMessage = `Error: ${data.error}`;
+        appendMessage(errorMessage, "Person2");
+        saveMessage(errorMessage, "Person2");
       } else {
-        appendMessage("Sorry, I could not process that.", "Person2");
+        const fallbackMessage = "Sorry, I could not process that.";
+        appendMessage(fallbackMessage, "Person2");
+        saveMessage(fallbackMessage, "Person2");
       }
     })
     .catch((error) => {
       console.error("Error:", error);
       // Remove loading indicator
       chatMessages.removeChild(loadingDiv);
-      appendMessage("Sorry, something went wrong.", "Person2");
+      const errorFallback = "Sorry, something went wrong.";
+      appendMessage(errorFallback, "Person2");
+      saveMessage(errorFallback, "Person2");
     });
 }
 
@@ -342,7 +355,7 @@ function appendMessage(message, sender) {
   messageDiv.classList.add("message", sender);
 
   if (sender === "Person2" && message.includes("moayyad")) {
-    // If the message is from the assistant and mentions your name, you might want to style it differently
+    // If the message is from the assistant and mentions your name, style it differently
     messageDiv.innerHTML = `<strong>${message}</strong>`;
   } else {
     messageDiv.textContent = message;
@@ -357,15 +370,31 @@ function sendWelcomeMessage() {
     "Hello! I’m Moayyad’s Virtual Twin – designed to be smart, capable, and always ready to chat with you!";
 
   appendMessage(welcomeText, "Person2");
+  saveMessage(welcomeText, "Person2");
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-// Function to adjust textarea height dynamically
-function adjustTextareaHeight() {
-  chatInput.style.height = "auto"; // Reset height
-  chatInput.style.height = `${chatInput.scrollHeight}px`; // Set new height
+// Function to save messages to localStorage
+function saveMessage(message, sender) {
+  let chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
+  chatHistory.push({ message, sender });
+  localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
 }
 
+// Function to load chat history from localStorage
+function loadChatHistory() {
+  const chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
+  chatHistory.forEach(({ message, sender }) => {
+    appendMessage(message, sender);
+  });
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Function to adjust textarea height (optional, based on your UI)
+function adjustTextareaHeight() {
+  chatInput.style.height = "auto";
+  chatInput.style.height = `${chatInput.scrollHeight}px`;
+}
 // Initialize textarea height on page load
 document.addEventListener("DOMContentLoaded", () => {
   adjustTextareaHeight();
