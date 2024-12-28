@@ -1731,3 +1731,21 @@ body.light-mode .hidden-qualifications.show {
 html {
   scroll-behavior: smooth;
 }
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#home {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section {
+  min-height: 100vh;
+}
