@@ -373,3 +373,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Event listener for input to adjust height dynamically
 chatInput.addEventListener("input", adjustTextareaHeight);
+const setDynamicHeight = () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+};
+
+// Call on load and resize
+window.addEventListener("resize", setDynamicHeight);
+window.addEventListener("orientationchange", setDynamicHeight);
+setDynamicHeight();

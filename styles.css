@@ -1731,17 +1731,6 @@ body.light-mode .hidden-qualifications.show {
 html {
   scroll-behavior: smooth;
 }
-body,
-html {
-  height: 100%;
-  margin: 0;
-  overflow: auto; /* Allow scrolling */
-}
-
-#home {
-  min-height: 100%; /* Fullscreen height */
-}
-.scrollable-content {
-  height: 200vh; /* Twice the viewport height */
-  background: linear-gradient(to bottom, #00d4ff, #00ff8c);
+.full-height {
+  height: calc(var(--vh, 1vh) * 100);
 }
