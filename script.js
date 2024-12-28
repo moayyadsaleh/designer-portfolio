@@ -1,11 +1,36 @@
 const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 
+// Check localStorage for saved theme
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  body.classList.add(savedTheme);
+  themeToggle.innerHTML =
+    savedTheme === "dark-mode"
+      ? '<i class="fas fa-sun"></i>'
+      : '<i class="fas fa-moon"></i>';
+} else {
+  themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Default icon
+}
+
+// Toggle theme on button click
 themeToggle.addEventListener("click", () => {
-  body.classList.toggle("dark-mode");
-  themeToggle.innerHTML = body.classList.contains("dark-mode")
-    ? '<i class="fas fa-sun"></i>'
-    : '<i class="fas fa-moon"></i>';
+  body.classList.add("theme-transition"); // Add transition class
+  setTimeout(() => {
+    body.classList.remove("theme-transition"); // Remove after effect
+  }, 500);
+
+  if (body.classList.contains("dark-mode")) {
+    body.classList.remove("dark-mode");
+    body.classList.add("light-mode");
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    localStorage.setItem("theme", "light-mode");
+  } else {
+    body.classList.remove("light-mode");
+    body.classList.add("dark-mode");
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    localStorage.setItem("theme", "dark-mode");
+  }
 });
 
 document.querySelectorAll(".show-more-btn").forEach((button) => {

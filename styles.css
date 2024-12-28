@@ -1387,3 +1387,301 @@ html {
     font-size: 18px;
   }
 }
+/* Light Mode Theme with Updated Colors */
+body.light-mode {
+  background: linear-gradient(180deg, #f9f9f9, #ffffff); /* Subtle gradient */
+  color: #fff; /* White text for general body content */
+  font-family: "Inter", Arial, sans-serif; /* Modern font */
+}
+
+/* Navigation with Black Text */
+body.light-mode nav {
+  background: #ffffff; /* Clean white background */
+  color: #000; /* Black text for navigation */
+  border-radius: 10px; /* Smooth rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Navigation Links */
+body.light-mode nav ul li a {
+  color: #000; /* Black navigation links */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+body.light-mode nav ul li a:hover {
+  color: #00d2ff; /* Bright blue on hover */
+  text-decoration: none; /* Add emphasis on hover */
+}
+
+/* Logo Styling */
+body.light-mode .logo {
+  color: #000; /* Black text for "Portfolio" logo */
+  font-weight: 700;
+  font-size: 1.5rem; /* Adjust size as needed */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Theme Toggle Button */
+body.light-mode .theme-toggle {
+  background: none; /* Transparent background */
+  border: none; /* No border */
+  color: #000; /* Black color for the icon */
+  cursor: pointer;
+  font-size: 1.5rem; /* Adjust size of the icon */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+body.light-mode .theme-toggle:hover {
+  color: #00d2ff; /* Blue hover effect for the toggle */
+}
+
+/* Hero Text with Black Text */
+body.light-mode .hero-text h1 {
+  color: #000; /* Black header */
+  font-weight: 700; /* Bold for emphasis */
+  letter-spacing: 0.5px; /* Slight spacing for modern look */
+}
+
+body.light-mode .hero-text h1 span {
+  color: #00d2ff; /* Accent color for the name */
+}
+
+body.light-mode .hero-text p {
+  color: #000; /* Black paragraph text */
+  font-weight: 400;
+  line-height: 1.6; /* Improved spacing */
+}
+
+/* Cards, Buttons, and Other Content */
+body.light-mode .card,
+body.light-mode .btn,
+body.light-mode form,
+body.light-mode .hero-content {
+  background: #ffffff; /* Clean white background */
+  color: #fff; /* White text */
+  border-radius: 10px; /* Smooth rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+body.light-mode .btn {
+  background: linear-gradient(45deg, #0078ff, #00d2ff); /* Modern gradient */
+  color: #fff; /* White text */
+  border: none;
+  padding: 12px 24px; /* Spacious padding */
+  border-radius: 25px; /* Fully rounded buttons */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth interaction */
+}
+
+body.light-mode .btn:hover {
+  background: linear-gradient(
+    45deg,
+    #0056b3,
+    #0078ff
+  ); /* Stronger hover gradient */
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+/* Inputs */
+body.light-mode input,
+body.light-mode textarea {
+  background: #ffffff; /* Clean white background for inputs */
+  color: #000; /* Black text inside inputs for readability */
+  border: 1px solid #ddd; /* Light border */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+}
+
+body.light-mode input:focus,
+body.light-mode textarea:focus {
+  outline: none;
+  border: 1px solid #00d2ff; /* Blue focus outline */
+  box-shadow: 0 0 8px rgba(0, 210, 255, 0.3); /* Glow effect */
+}
+
+body.light-mode .card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Transition for Smooth Interaction */
+body,
+nav,
+.card,
+.btn,
+form,
+.hero-content {
+  transition: all 0.5s ease;
+}
+/* About Section Styling for Light Mode */
+body.light-mode #about {
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #f9f9f9
+  ); /* Subtle gradient background */
+  color: #000; /* Black text for readability */
+  padding: 40px; /* Spacing around the section */
+  border-radius: 10px; /* Smooth rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition for visual updates */
+}
+
+body.light-mode #about h2 {
+  color: #000; /* Black header */
+  font-size: 2rem; /* Slightly larger size for prominence */
+  margin-bottom: 20px; /* Space below the header */
+  text-align: center; /* Center-align header for balance */
+}
+
+body.light-mode #about p {
+  color: #555; /* Softer black for paragraph text */
+  font-size: 1rem; /* Regular size for readability */
+  line-height: 1.6; /* Improved spacing between lines */
+  margin-bottom: 30px; /* Space below the paragraph */
+  text-align: center; /* Center-align the paragraph for aesthetic */
+}
+
+body.light-mode .about-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Space between items */
+  padding: 15px; /* Internal padding for each item */
+  background: #f9f9f9; /* Slightly contrasting background */
+  border: 1px solid #ddd; /* Light border for definition */
+  border-radius: 8px; /* Smooth corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect transitions */
+}
+
+body.light-mode .about-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+body.light-mode .about-item i {
+  font-size: 2rem; /* Larger icon size */
+  color: #0078ff; /* Accent color for icons */
+  margin-right: 15px; /* Space between icon and text */
+}
+
+body.light-mode .about-item div {
+  color: #000; /* Black text for content */
+  font-size: 1rem; /* Regular size */
+}
+
+body.light-mode .about-item div strong {
+  color: #000; /* Strong black for bold text */
+  font-weight: 700; /* Bold text for emphasis */
+}
+/* Expertise Container Styling */
+body.light-mode #expertise-container {
+  background: linear-gradient(180deg, #ffffff, #f9f9f9); /* Subtle gradient */
+  padding: 40px; /* Spacing around the section */
+  border-radius: 10px; /* Smooth rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  color: #000; /* Black text for readability */
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Section Header */
+body.light-mode #expertise-container h2 {
+  color: #000; /* Black header text */
+  font-size: 2rem; /* Prominent header size */
+  margin-bottom: 20px; /* Space below the header */
+  text-align: center; /* Center-align for balance */
+}
+
+/* Expertise List */
+body.light-mode #expertise-list {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+body.light-mode #expertise-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* Space between list items */
+  font-size: 1.1rem; /* Slightly larger font size for emphasis */
+  color: #333; /* Dark gray text */
+}
+
+body.light-mode #expertise-list li i {
+  font-size: 1.5rem; /* Icon size */
+  color: #0078ff; /* Accent color for icons */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Show Qualifications Button */
+body.light-mode #show-qualifications-btn {
+  display: block;
+  margin: 20px auto; /* Center the button */
+  padding: 10px 20px;
+  background: linear-gradient(
+    45deg,
+    #0078ff,
+    #00d2ff
+  ); /* Gradient background */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 25px; /* Fully rounded button */
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+body.light-mode #show-qualifications-btn:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  background: linear-gradient(45deg, #0056b3, #0078ff); /* Darker gradient */
+}
+
+/* Hidden Qualifications Section */
+body.light-mode #qualifications {
+  background: #f9f9f9; /* Light gray background */
+  padding: 20px;
+  margin-top: 20px; /* Space above the section */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  color: #333; /* Dark gray text */
+}
+
+body.light-mode #qualifications p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* Space between paragraphs */
+  font-size: 1rem; /* Regular font size */
+}
+
+body.light-mode #qualifications p i {
+  font-size: 1.2rem; /* Icon size */
+  color: #0078ff; /* Accent color for icons */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Smooth Transition for Hidden Content */
+body.light-mode .hidden-qualifications {
+  display: none; /* Hidden by default */
+}
+
+body.light-mode .hidden-qualifications.show {
+  display: block; /* Revealed when toggled */
+  animation: fadeIn 0.5s ease; /* Smooth fade-in effect */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
