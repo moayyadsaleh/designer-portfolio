@@ -1109,9 +1109,9 @@ html {
 #chatbot-container {
   display: none;
   flex-direction: column;
-  width: 400px;
-  height: 550px;
-  background: rgba(30, 30, 30, 0.8); /* Transparent dark background */
+  width: 320px; /* Made smaller */
+  height: 450px; /* Adjusted height */
+  background: rgba(0, 0, 0, 0.7); /* Transparent dark background */
   backdrop-filter: blur(10px); /* Frosted glass effect */
   border-radius: 20px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
@@ -1120,7 +1120,7 @@ html {
   right: 20px;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
-  color: white;
+  color: #fff;
   animation: fadeIn 0.5s ease-in-out;
   z-index: 1000;
 }
@@ -1130,11 +1130,11 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(45deg, #006eff, #00c1d4);
-  padding: 15px 20px;
-  font-size: 18px;
+  background: rgba(0, 0, 0, 0.8); /* See-through black header */
+  padding: 10px 15px;
+  font-size: 16px;
   font-weight: bold;
-  color: white;
+  color: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -1143,7 +1143,7 @@ html {
   background: none;
   border: none;
   font-size: 20px;
-  color: white;
+  color: #fff;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -1155,7 +1155,7 @@ html {
 /* Chat Messages Container */
 #chatbot-messages {
   flex: 1;
-  padding: 15px;
+  padding: 10px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -1168,13 +1168,13 @@ html {
 }
 
 #chatbot-messages::-webkit-scrollbar-thumb {
-  background: rgba(0, 122, 255, 0.6);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
 }
 
 /* Chat Bubbles */
 .message {
-  padding: 12px 16px;
+  padding: 10px 14px;
   border-radius: 15px;
   max-width: 75%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -1182,17 +1182,19 @@ html {
   animation: slideIn 0.3s ease-in-out;
 }
 
+/* Person1’s bubble (outgoing) */
 .Person1 {
   align-self: flex-end;
-  background: linear-gradient(45deg, #0078d7, #00c1d4);
-  color: white;
+  background: rgba(0, 0, 0, 0.8); /* Dark see-through bubble */
+  color: #fff;
   border-bottom-right-radius: 0;
   text-align: right;
 }
 
+/* Person2’s bubble (incoming) */
 .Person2 {
   align-self: flex-start;
-  background: rgba(240, 240, 240, 0.9);
+  background: rgba(255, 255, 255, 0.85); /* Slightly see-through white */
   color: #333;
   border-bottom-left-radius: 0;
   text-align: left;
@@ -1200,7 +1202,7 @@ html {
 
 /* Glowing Effect for Messages */
 .message:hover {
-  box-shadow: 0 0 20px rgba(0, 120, 215, 0.6);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -1217,7 +1219,7 @@ html {
   content: "";
   width: 8px;
   height: 8px;
-  background: #0078d7;
+  background: #fff;
   border-radius: 50%;
   animation: bounce 1s infinite;
 }
@@ -1243,56 +1245,57 @@ html {
 
 #chat-input {
   flex: 1;
-  padding: 12px 15px;
+  padding: 10px 12px;
   border: none;
   border-radius: 25px;
   background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: #fff;
   font-size: 14px;
   outline: none;
   resize: none;
   line-height: 1.5;
   overflow-y: auto;
-  max-height: 150px;
+  max-height: 120px; /* Slightly reduced max-height */
   transition: box-shadow 0.3s ease;
 }
 
 #chat-input:focus {
-  box-shadow: 0 0 10px rgba(0, 120, 215, 0.7);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 /* Send Button */
 #send-chat {
-  background: linear-gradient(45deg, #0078d7, #00c1d4);
+  background: rgba(0, 0, 0, 0.9);
   border: none;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 40px; /* Made smaller */
+  height: 40px; /* Made smaller */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
   cursor: pointer;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   animation: glowPulse 1.5s infinite ease-in-out;
 }
 
 #send-chat i {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #send-chat:hover {
-  background: linear-gradient(45deg, #005bb5, #00a3b5);
-  box-shadow: 0px 6px 15px rgba(0, 120, 215, 0.8);
+  background: rgba(50, 50, 50, 0.9);
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
 }
 
+/* Pulsing Glow Animation */
 @keyframes glowPulse {
   0%,
   100% {
-    box-shadow: 0 0 10px rgba(0, 120, 215, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
   }
   50% {
-    box-shadow: 0 0 20px rgba(0, 120, 215, 0.8);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
   }
 }
 
@@ -1300,17 +1303,17 @@ html {
 #open-chatbot {
   position: fixed;
   bottom: 20px;
-  right: 40px; /* Push it 20px left from the edge */
+  right: 25px; /* Adjust for a sleeker position */
   background: rgba(0, 0, 0, 0.8);
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 50px; /* Slightly smaller */
+  height: 50px; /* Slightly smaller */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 22px;
   cursor: pointer;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s, background 0.3s;
@@ -1344,13 +1347,15 @@ html {
     transform: translateY(0);
   }
 }
+
+/* Responsive Adjustments */
 @media (max-width: 480px) {
   #chatbot-container {
-    width: 100%; /* Full width */
-    height: 450px;
-    right: 0; /* Fully centered */
+    width: 100%; /* Full width for mobile */
+    height: 420px;
+    right: 0;
     bottom: 0;
-    border-radius: 10px; /* Slightly reduced border radius */
+    border-radius: 10px;
   }
 
   #chatbot-header {
@@ -1375,9 +1380,8 @@ html {
   }
 
   #open-chatbot {
-    width: 45px;
-
-    height: 45px;
+    width: 40px;
+    height: 40px;
     bottom: 10px;
     right: 10px;
     font-size: 18px;
