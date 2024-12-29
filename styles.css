@@ -1197,9 +1197,23 @@ html {
   color: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
+/* Ensure text and close button don't overlap */
+#chatbot-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  flex-grow: 1; /* Allow the heading to take available space */
+  text-align: center; /* Center-align text within the remaining space */
+  padding-right: 40px; /* Ensure space for the close button */
+}
+
+/* Close Button */
 #chatbot-header button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
   background: none;
   border: none;
   font-size: 20px;
@@ -1212,6 +1226,22 @@ html {
   transform: scale(1.2);
 }
 
+/* Responsive Styling for Small Devices */
+@media (max-width: 600px) {
+  #chatbot-header {
+    justify-content: center;
+  }
+
+  #chatbot-header h3 {
+    font-size: 1rem;
+    padding-right: 50px; /* Add more space for larger close button */
+  }
+
+  #chatbot-header button {
+    font-size: 1.8rem; /* Keep button touch-friendly */
+    right: 10px; /* Adjust spacing for small screens */
+  }
+}
 /* Chat Messages Container */
 #chatbot-messages {
   flex: 1;
@@ -1337,6 +1367,43 @@ html {
   max-height: 120px;
   transition: box-shadow 0.3s ease;
 }
+/* Default styles for the chatbot header */
+#chatbot-header {
+  display: flex;
+  justify-content: space-between; /* Align h3 to the left and button to the right */
+  align-items: center;
+  padding: 10px;
+}
+
+#chatbot-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: left; /* Ensure text alignment is to the left */
+  flex-grow: 1; /* Allow the h3 to take available space */
+}
+#close-chatbot:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  #chatbot-header {
+    display: flex !important; /* Ensure flexbox is applied */
+    flex-direction: row !important; /* Keep the header elements in a row */
+    align-items: center !important; /* Ensure vertical alignment */
+  }
+
+  #chatbot-header h3 {
+    font-size: 1rem !important; /* Slightly reduce font size for smaller screens */
+  }
+
+  #close-chatbot {
+    font-size: 1.8rem !important; /* Keep the button touch-friendly */
+    margin-left: auto !important; /* Push the button to the far right */
+    margin-right: 10px !important; /* Add a little space from the edge */
+  }
+}
 
 #chat-input:focus {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
@@ -1410,18 +1477,6 @@ html {
   overflow: hidden;
   animation: bounce 1.5s infinite, glowTense 1.5s infinite;
 }
-/* Glow effect animation */
-@keyframes glowTense {
-  0% {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8); /* Tense and stronger glow */
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  }
-}
 #chatbot-avatar img {
   width: 100%;
   height: 100%;
@@ -1463,47 +1518,6 @@ html {
   }
   to {
     opacity: 1;
-  }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 480px) {
-  #chatbot-container {
-    width: 100%;
-    height: 420px;
-    right: 0;
-    bottom: 0;
-    border-radius: 10px;
-  }
-
-  #chatbot-header {
-    padding: 8px 10px;
-    font-size: 14px;
-  }
-
-  #chatbot-messages {
-    padding: 8px;
-    gap: 6px;
-  }
-
-  #chat-input {
-    padding: 8px;
-    font-size: 12px;
-  }
-
-  #send-chat {
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
-  }
-
-  #chatbot-avatar {
-    width: 50px;
-    height: 50px;
-  }
-
-  #chatbot-avatar span {
-    font-size: 10px;
   }
 }
 
@@ -1951,5 +1965,17 @@ html {
 
   div[style*="display: flex"] {
     gap: 5px; /* Minimal gap for compact screens */
+  }
+}
+/* Glow effect animation */
+@keyframes glowTense {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8); /* Tense and stronger glow */
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
   }
 }
