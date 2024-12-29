@@ -689,7 +689,11 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.gradient-text {
+  background: linear-gradient(90deg, #00d4ff, #00ff8c);
+  -webkit-background-clip: text; /* Clips the background to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text color transparent */
+}
 /* Parallax background */
 #background {
   position: fixed; /* Fixed positioning for parallax effect */
@@ -1500,7 +1504,23 @@ body.light-mode nav ul li a {
   text-decoration: none;
   font-weight: 500;
 }
+/* Hamburger Menu Items - Light Mode (Phone View) */
+@media (max-width: 768px) {
+  body.light-mode nav ul li a {
+    color: black; /* Black text for menu items */
+    background: rgba(255, 255, 255, 0.8); /* Slightly opaque white background */
+    padding: 0.8em;
+    border-radius: 6px; /* Rounded corners for a modern look */
+    display: block; /* Ensure menu items stack vertically */
+    margin-bottom: 0.5em;
+    transition: color 0.3s, background 0.3s;
+  }
 
+  body.light-mode nav ul li a:hover {
+    background: rgba(230, 230, 230, 0.9); /* Lighter background on hover */
+    color: #2c3e50; /* Slightly darker black text */
+  }
+}
 body.light-mode nav ul li a:hover {
   color: #00d2ff; /* Bright blue on hover */
   text-decoration: none; /* Add emphasis on hover */
@@ -1518,7 +1538,7 @@ body.light-mode .logo {
 body.light-mode .theme-toggle {
   background: none; /* Transparent background */
   border: none; /* No border */
-  color: #000; /* Black color for the icon */
+  color: #00d2ff; /* Black color for the icon */
   cursor: pointer;
   font-size: 1.5rem; /* Adjust size of the icon */
   transition: color 0.3s ease; /* Smooth transition for color */
