@@ -113,18 +113,18 @@ const messages = [
   },
   {
     user: "person2",
-    text: "I’m an instructional designer and software engineer who uses programming to solve complex challenges.",
-    profileImage: "fullFormalSuite111-removebg-preview.png",
+    text: "I combine instructional design and programming to solve complex challenges.",
+    profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person2",
     text: "I specialize in building tools, analyzing data, and automating workflows to save time and effort.",
-    profileImage: "fullFormalSuite111-removebg-preview.png",
+    profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person2",
     text: "I bring ideas to life by creating functional apps, websites, and intelligent online solutions.",
-    profileImage: "fullFormalSuite111-removebg-preview.png",
+    profileImage: "Moayyad's Pic.png",
   },
 ];
 
@@ -252,8 +252,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // script.js
 
-// script.js
-
 // Chatbot Functionality
 const openChatbotBtn = document.getElementById("open-chatbot");
 const chatbotContainer = document.getElementById("chatbot-container");
@@ -264,9 +262,6 @@ const chatMessages = document.getElementById("chatbot-messages");
 
 // Flag to check if welcome message has been sent
 let isWelcomeSent = false;
-
-// Load chat history from localStorage
-loadChatHistory();
 
 // Open Chatbot
 openChatbotBtn.addEventListener("click", () => {
@@ -300,7 +295,6 @@ function sendMessage() {
   if (message === "") return;
 
   appendMessage(message, "Person1");
-  saveMessage(message, "Person1");
   chatInput.value = "";
   adjustTextareaHeight();
   chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -327,25 +321,18 @@ function sendMessage() {
 
       if (data.reply) {
         appendMessage(data.reply, "Person2");
-        saveMessage(data.reply, "Person2");
         chatMessages.scrollTop = chatMessages.scrollHeight;
       } else if (data.error) {
-        const errorMessage = `Error: ${data.error}`;
-        appendMessage(errorMessage, "Person2");
-        saveMessage(errorMessage, "Person2");
+        appendMessage(`Error: ${data.error}`, "Person2");
       } else {
-        const fallbackMessage = "Sorry, I could not process that.";
-        appendMessage(fallbackMessage, "Person2");
-        saveMessage(fallbackMessage, "Person2");
+        appendMessage("Sorry, I could not process that.", "Person2");
       }
     })
     .catch((error) => {
       console.error("Error:", error);
       // Remove loading indicator
       chatMessages.removeChild(loadingDiv);
-      const errorFallback = "Sorry, something went wrong.";
-      appendMessage(errorFallback, "Person2");
-      saveMessage(errorFallback, "Person2");
+      appendMessage("Sorry, something went wrong.", "Person2");
     });
 }
 
@@ -355,7 +342,7 @@ function appendMessage(message, sender) {
   messageDiv.classList.add("message", sender);
 
   if (sender === "Person2" && message.includes("moayyad")) {
-    // If the message is from the assistant and mentions your name, style it differently
+    // If the message is from the assistant and mentions your name, you might want to style it differently
     messageDiv.innerHTML = `<strong>${message}</strong>`;
   } else {
     messageDiv.textContent = message;
@@ -370,31 +357,15 @@ function sendWelcomeMessage() {
     "Hello! I’m Moayyad’s Virtual Twin – designed to be smart, capable, and always ready to chat with you!";
 
   appendMessage(welcomeText, "Person2");
-  saveMessage(welcomeText, "Person2");
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-// Function to save messages to localStorage
-function saveMessage(message, sender) {
-  let chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
-  chatHistory.push({ message, sender });
-  localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
-}
-
-// Function to load chat history from localStorage
-function loadChatHistory() {
-  const chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
-  chatHistory.forEach(({ message, sender }) => {
-    appendMessage(message, sender);
-  });
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-// Function to adjust textarea height (optional, based on your UI)
+// Function to adjust textarea height dynamically
 function adjustTextareaHeight() {
-  chatInput.style.height = "auto";
-  chatInput.style.height = `${chatInput.scrollHeight}px`;
+  chatInput.style.height = "auto"; // Reset height
+  chatInput.style.height = `${chatInput.scrollHeight}px`; // Set new height
 }
+
 // Initialize textarea height on page load
 document.addEventListener("DOMContentLoaded", () => {
   adjustTextareaHeight();
@@ -402,12 +373,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Event listener for input to adjust height dynamically
 chatInput.addEventListener("input", adjustTextareaHeight);
-const setDynamicHeight = () => {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-};
-
-// Call on load and resize
-window.addEventListener("resize", setDynamicHeight);
-window.addEventListener("orientationchange", setDynamicHeight);
-setDynamicHeight();
