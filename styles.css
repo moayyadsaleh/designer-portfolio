@@ -156,7 +156,7 @@ nav ul {
   list-style: none;
 }
 .parallax-portfolio {
-  background-image: url("pexels-sanaan-3075993-min (1).jpg") !important;
+  background-image: url("4k-tech-ulcajgzzc25jlrgi.jpg") !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   background-position: center !important;
@@ -384,7 +384,7 @@ nav .theme-toggle {
 #contact {
   position: relative; /* Position relative for stacking */
   padding: 3rem 2rem;
-  background: url("pexels-pixabay-219692 (1) (1) (1).jpg") no-repeat center
+  background: url("pexels-pixabay-219692 (1) (1) (1)-min.jpg") no-repeat center
     center fixed; /* Add your image */
   background-size: cover; /* Ensure the background covers the entire section */
   color: whitesmoke;
@@ -701,7 +701,7 @@ html {
   left: 0;
   width: 100%;
   height: 100vh; /* Full viewport height */
-  background-image: url("pexels-josh-hild-1270765-3573383 (1).jpg");
+  background-image: url("pexels-josh-hild-1270765-3573383 (1)-min.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
