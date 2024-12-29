@@ -253,7 +253,17 @@
           </a>
         </div>
       </div>
-      <div style="margin-top: 40px; text-align: center">
+      <div
+        style="
+          margin-top: 40px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+        "
+      >
+        <!-- Lightbulb Section -->
         <div
           style="
             display: inline-block;
@@ -301,6 +311,35 @@
           >
             Explore the full collection. →
           </a>
+        </div>
+
+        <!-- New Icon Section -->
+        <i
+          class="fas fa-info-circle"
+          id="info-icon"
+          style="
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+            animation: glow 2s infinite;
+            transition: transform 0.3s ease, color 0.3s ease;
+          "
+          title="More Information"
+          onclick="toggleInfoPopup()"
+        ></i>
+      </div>
+      <div id="info-modal" class="modal hidden">
+        <div class="modal-content">
+          <button class="close-modal" onclick="toggleInfoPopup()">
+            &times;
+          </button>
+          <h2>Design Philosophy</h2>
+          <p>
+            The tools I program are responsive, scalable, and secure, offering
+            easy integration and continuous improvement. My learning experiences
+            are structured, engaging, and inclusive, designed to deliver
+            real-world applications and learner-focused results.
+          </p>
         </div>
       </div>
     </section>

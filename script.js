@@ -373,3 +373,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Event listener for input to adjust height dynamically
 chatInput.addEventListener("input", adjustTextareaHeight);
+function toggleInfoPopup() {
+  const infoModal = document.getElementById("info-modal");
+  infoModal.classList.toggle("hidden");
+}
