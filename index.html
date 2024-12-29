@@ -320,7 +320,6 @@
       <div id="chatbot-avatar">
         <img src="Moayyad's Pic.png" alt="Moayyad" />
       </div>
-      <span class="tooltip">Chat with me!</span>
     </button>
     <!-- Contact Section -->
     <section id="contact" class="section">
@@ -383,5 +382,26 @@
       data-id="1352eae3-8256-487a-85f6-e08abaac5740"
       data-utcoffset="-6"
     ></script>
+    <script>
+      const button = document.getElementById("open-chatbot");
+      const tooltip = button.querySelector(".tooltip");
+
+      button.addEventListener("mouseover", () => {
+        const rect = tooltip.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+
+        // Adjust tooltip position dynamically if it overflows
+        if (rect.left < 0) {
+          tooltip.style.left = "5%";
+          tooltip.style.transform = "translateX(0)";
+        } else if (rect.right > viewportWidth) {
+          tooltip.style.left = "95%";
+          tooltip.style.transform = "translateX(-100%)";
+        } else {
+          tooltip.style.left = "50%";
+          tooltip.style.transform = "translateX(-50%)";
+        }
+      });
+    </script>
   </body>
 </html>
