@@ -113,17 +113,17 @@ const messages = [
   },
   {
     user: "person2",
-    text: "I combine instructional design and programming to solve complex problems.",
+    text: "I design innovative learning tools and solve complex problems with code.",
     profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person2",
-    text: "I build tools, analyze data, and automate tasks to save time and effort.",
+    text: "I automate workflows to save time and enhance productivity.",
     profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person2",
-    text: "I turn ideas into functional apps, websites, and smart online solutions.",
+    text: "I turn ideas into smart, impactful tech solutions.",
     profileImage: "Moayyad's Pic.png",
   },
 ];
