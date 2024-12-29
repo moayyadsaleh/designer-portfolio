@@ -26,11 +26,32 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: url("pexels-nextvoyage-1470405 (1).jpg") center/cover
-          no-repeat;
+        background: url("DALL·E 2024-12-29 09.43.13 - An ultra-realistic nighttime depiction of a modern corporate skyscraper in a bustling city. The building features sleek glass surfaces reflecting the .webp")
+          center/cover no-repeat;
         color: #fff;
         padding: 4rem 2rem;
-        backdrop-filter: blur(10px);
+        position: relative; /* Allows for overlaying */
+      }
+
+      .parallax-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Semi-transparent black overlay to dim */
+        z-index: 1; /* Places the dim layer below the content */
+      }
+
+      .parallax-hero * {
+        position: relative; /* Ensures text stays above the overlay */
+        z-index: 2;
       }
       /* Default Parallax */
       .parallax-hero,
@@ -56,12 +77,13 @@
       .parallax-section {
         min-height: 100vh; /* Full viewport height for consistency */
         padding: 4rem 2rem;
-        background: url("pexels-peng-liu-45946-169647 (1).jpg") center/cover
-          no-repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          /* Semi-transparent black overlay */
+            url("DALL·E 2024-12-29 09.55.47 - A hyper-realistic 3D globe at night, perfectly centered and upright, with continents illuminated by city lights. Surrounding the globe, glowing hologr.webp")
+            center/cover no-repeat;
         color: #fff;
         backdrop-filter: blur(10px);
       }
-
       /* Parallax Background */
       .parallax-hero,
       .parallax-section {
