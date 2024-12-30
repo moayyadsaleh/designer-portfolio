@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const textContainer = document.getElementById("text-container");
 
   // Use only one message from the skills array
-  const skills = ["Simplify. Secure. Deliver."];
+  const skills = ["I Strategize. I Build. I Transform."];
 
   let index = 0; // Current skill index
   let charIndex = 0; // Current character index
