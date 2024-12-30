@@ -107,23 +107,23 @@ window.addEventListener("scroll", function () {
 const messages = [
   {
     user: "person1",
-    text: "Hey Moayyad, I heard you’re into tech. What’s your focus?",
+    text: "Hey Moayyad, what’s your area of expertise?",
     profileImage:
       "https://www.pngitem.com/pimgs/m/286-2868690_thumb-image-smiling-businessman-png-transparent-png.png",
   },
   {
     user: "person2",
-    text: "I design innovative learning tools and solve complex problems with code.",
+    text: "I create interactive learning tools, develop custom web solutions, and enhance educational outcomes with technology.",
     profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person2",
-    text: "I automate workflows to save time and enhance productivity.",
+    text: "I analyze data to optimize learning strategies, automate workflows, and improve efficiency.",
     profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person2",
-    text: "I turn ideas into smart, impactful tech solutions.",
+    text: "I design, program, and build solutions that merge education, design, and technology for maximum impact.",
     profileImage: "Moayyad's Pic.png",
   },
 ];
