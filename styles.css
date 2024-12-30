@@ -593,35 +593,6 @@ form button:active {
     max-width: 100%;
   }
 }
-/* Apple-Inspired Button */
-.btn {
-  display: inline-block;
-  background-color: #0071e3; /* Apple's signature blue */
-  color: black !important;
-  padding: 0.7rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: none;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.2s ease, transform 0.2s ease,
-    box-shadow 0.2s ease;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #005bb5;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.btn:active {
-  background-color: #004999;
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
 
 .close-btn {
   background: none;
@@ -1149,11 +1120,7 @@ html {
   margin-right: 8px; /* spacing after the icon */
 }
 /* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 /* Chatbot Container */
 #chatbot-container {
   display: none;
