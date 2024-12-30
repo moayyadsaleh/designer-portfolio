@@ -147,50 +147,6 @@
         font-size: 0.9rem;
         color: #ccc;
       }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .nav-list {
-          display: flex;
-          flex-direction: column;
-          position: static;
-          background: none;
-          width: auto;
-          padding: 0;
-          border-radius: 0;
-        }
-
-        .nav-list li {
-          margin: 1rem 0;
-        }
-
-        .menu-toggle,
-        .close-btn {
-          display: none;
-        }
-
-        .hero h1 {
-          font-size: 2rem;
-        }
-
-        .hero p {
-          font-size: 1rem;
-        }
-
-        .live-demo {
-          font-size: 1rem;
-          padding: 0.7rem 1.2rem;
-        }
-
-        .project-visual {
-          height: 200px;
-          font-size: 1.2rem;
-        }
-
-        section h2 {
-          font-size: 1.5rem;
-        }
-      }
     </style>
   </head>
   <body>
@@ -210,13 +166,17 @@
           </button>
         </li>
       </ul>
-      <button class="theme-toggle" id="theme-toggle">
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        data-tooltip="Toggle Dark/Light Mode"
+      >
         <i class="fas fa-moon"></i>
       </button>
     </nav>
     <!-- Hero Section -->
     <header class="hero parallax-hero">
-      <h1>Corporate Solutions That Work</h1>
+      <h1 class="gradient-text">Corporate Solutions That Work</h1>
       <p>Design. Innovate. Deliver.</p>
     </header>
 
@@ -360,11 +320,33 @@
       data-id="1352eae3-8256-487a-85f6-e08abaac5740"
       data-utcoffset="-6"
     ></script>
-    <script
-      src="https://cdn.counter.dev/script.js"
-      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
-      data-utcoffset="-6"
-    ></script>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navList = document.getElementById("nav-list");
+      const closeBtn = document.getElementById("close-btn");
+
+      const toggleMenu = (event) => {
+        navList.classList.toggle("show");
+        event.stopPropagation();
+      };
+
+      const closeMenu = () => {
+        navList.classList.remove("show");
+      };
+
+      const handleClickOutside = (event) => {
+        if (
+          !navList.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          closeMenu();
+        }
+      };
+
+      menuToggle.addEventListener("click", toggleMenu);
+      closeBtn.addEventListener("click", closeMenu);
+      document.addEventListener("click", handleClickOutside);
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
