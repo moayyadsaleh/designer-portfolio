@@ -229,8 +229,8 @@ nav .theme-toggle {
 /* Parallax Background Effect */
 .parallax {
   height: 100vh;
-  background: url("DALL·E 2024-12-29 10.36.31 - A realistic depiction of a futuristic world map or globe with glowing blue and purple lines connecting major cities across continents. The background .webp")
-    no-repeat center center/cover;
+  background: url("pexels-serpstat-177219-572056.jpg") no-repeat center
+    center/cover;
   background-attachment: fixed; /* Enables parallax effect */
   background-size: cover;
   background-position: center;
@@ -661,7 +661,7 @@ html {
   left: 0;
   width: 100%;
   height: 100vh; /* Full viewport height */
-  background-image: url("DALL·E 2024-12-29 10.40.52 - A hyper-realistic futuristic workspace featuring a sleek, modern desk setup with multiple holographic screens displaying vivid charts, programming cod.webp");
+  background-image: url("pexels-pixabay-37347 (1) (1).jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;

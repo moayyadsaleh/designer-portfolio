@@ -12,6 +12,13 @@
     />
   </head>
   <style>
+    .hero-image img {
+      transition: transform 0.6s ease-out;
+    }
+
+    .hero-image img.visible {
+      transform: rotate(3deg) scale(1.05);
+    }
     .nav-list a:hover {
       color: #00d4ff;
     }
@@ -444,6 +451,16 @@
         } else {
           tooltip.style.left = "50%";
           tooltip.style.transform = "translateX(-50%)";
+        }
+      });
+    </script>
+    <script>
+      const img = document.querySelector(".hero-image img");
+
+      window.addEventListener("scroll", () => {
+        const rect = img.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          img.classList.add("visible");
         }
       });
     </script>
