@@ -190,6 +190,24 @@ nav ul li {
   position: relative;
   overflow: hidden; /* Ensures the underline doesn't overflow the link */
 }
+/* Small Device Styles */
+@media (max-width: 768px) {
+  /* Show the Hamburger Menu and Theme Toggle */
+  .menu-toggle,
+  .theme-toggle {
+    display: block;
+    position: absolute;
+    top: 10px; /* Adjust for spacing */
+  }
+
+  .menu-toggle {
+    right: 50px; /* Spaced from the right edge */
+  }
+
+  .theme-toggle {
+    right: 10px;
+  }
+}
 
 nav ul li a {
   text-decoration: none;
@@ -1541,7 +1559,19 @@ body.light-mode .theme-toggle {
 body.light-mode .theme-toggle:hover {
   color: #00d2ff; /* Blue hover effect for the toggle */
 }
+/* Hamburger Menu Toggle Button in Light Mode */
+body.light-mode .menu-toggle {
+  background: none; /* Transparent background */
+  border: none; /* No border */
+  color: #00d2ff; /* Blue color for the icon */
+  cursor: pointer;
+  font-size: 1.5rem; /* Adjust size of the icon */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
 
+body.light-mode .menu-toggle:hover {
+  color: #00d2ff; /* Slightly darker blue hover effect */
+}
 /* Hero Text with Black Text */
 body.light-mode .hero-text h1 {
   color: #000; /* Black header */
