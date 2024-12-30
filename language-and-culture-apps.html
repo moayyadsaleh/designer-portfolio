@@ -232,10 +232,15 @@
           </button>
         </li>
       </ul>
-      <button class="theme-toggle" id="theme-toggle">
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        data-tooltip="Toggle Dark/Light Mode"
+      >
         <i class="fas fa-moon"></i>
       </button>
     </nav>
+
     <!-- Hero Section -->
     <header class="hero parallax-hero">
       <h1>Modern Solutions for Language Educators</h1>
@@ -382,5 +387,36 @@
       data-utcoffset="-6"
     ></script>
     <script src="script.js"></script>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navList = document.getElementById("nav-list");
+      const closeBtn = document.getElementById("close-btn");
+
+      // Function to toggle menu visibility
+      const toggleMenu = (event) => {
+        navList.classList.toggle("show");
+        event.stopPropagation(); // Prevent click event from propagating to the document
+      };
+
+      // Function to close the menu
+      const closeMenu = () => {
+        navList.classList.remove("show");
+      };
+
+      // Close menu when clicking outside
+      const handleClickOutside = (event) => {
+        if (
+          !navList.contains(event.target) && // Click is outside navList
+          !menuToggle.contains(event.target) // Click is outside menuToggle
+        ) {
+          closeMenu();
+        }
+      };
+
+      // Event listeners
+      menuToggle.addEventListener("click", toggleMenu);
+      closeBtn.addEventListener("click", closeMenu);
+      document.addEventListener("click", handleClickOutside);
+    </script>
   </body>
 </html>
