@@ -1968,3 +1968,8 @@ html {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
   }
 }
+@media (max-width: 600px) {
+  h1.gradient-text {
+    font-size: 1.5rem; /* Adjust font size for small screens */
+  }
+}
