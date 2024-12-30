@@ -354,7 +354,7 @@ function appendMessage(message, sender) {
 // Function to send welcome message
 function sendWelcomeMessage() {
   const welcomeText =
-    "Hello! I’m Moayyad – a pre-programmed version of myself, here to chat, help, and share my expertise with you!";
+    "Hi there! I’m Moayyad’s virtual twin—ready to answer your questions, share insights, and help you explore innovative solutions. Let’s get started!";
 
   appendMessage(welcomeText, "Person2");
   chatMessages.scrollTop = chatMessages.scrollHeight;
