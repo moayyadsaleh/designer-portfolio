@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moayyad Alazzam Portfolio</title>
+    <title>Instructor Teaching Schedule Manager</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -16,20 +16,23 @@
         <i class="fas fa-bars"></i>
       </button>
       <ul class="nav-list" id="nav-list">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#portfolio">Portfolio</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#instructions">Instructions</a></li>
         <li>
           <button class="close-btn" id="close-btn">
             <i class="fas fa-times"></i>
           </button>
         </li>
       </ul>
-      <button class="theme-toggle" id="theme-toggle">
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        data-tooltip="Toggle Dark/Light Mode"
+      >
         <i class="fas fa-moon"></i>
       </button>
     </nav>
-
     <style>
       * {
         margin: 0;
@@ -44,14 +47,14 @@
         color: #fff;
         overflow-x: hidden;
       }
-      /* Light Mode Text Styling */
-      body.light-mode h3,
-      body.light-mode p {
-        color: #000; /* Black text */
-      }
+
       header {
         height: 100vh;
-        background-image: url("pexels-olly-927022 (1).jpg");
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ),
+          /* Dim overlay */ url("pexels-fauxels-3184357 (1).jpg");
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
@@ -117,7 +120,7 @@
       .detail-card {
         backdrop-filter: blur(15px);
         background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 0, 0.2);
         border-radius: 15px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         padding: 1.5rem;
@@ -155,103 +158,70 @@
         text-align: center;
         background: #1a1a1a;
       }
+
+      /* Light Mode Text Styling */
+      body.light-mode h3,
+      body.light-mode p {
+        color: #000; /* Black text */
+      }
     </style>
   </head>
   <body>
     <header>
-      <h1 class="gradient-text">Empowering Corporate Excellence</h1>
+      <h1 class="gradient-text">Effortlessly Manage Teaching Schedules</h1>
     </header>
 
     <section style="background-image: url('project-card-section.jpg')">
       <div class="project-card">
-        <h2 class="gradient-text">Exceptional Customer Service Training</h2>
+        <h2 class="gradient-text">Instructor Schedule Management Tool</h2>
         <p>
-          I developed this course using Articulate Storyline on customer service
-          excellence. Through engaging modules, employees learn techniques to
-          elevate interactions, resolve challenges efficiently, and create
-          memorable customer experiences.
+          A comprehensive tool for managing class schedules. Easily add, view,
+          and edit teaching assignments while ensuring a seamless user
+          experience.
         </p>
       </div>
     </section>
 
     <section class="details-section">
       <div class="detail-card">
-        <h3 class="gradient-text">What Was Done</h3>
+        <h3 class="gradient-text">How It Works</h3>
         <p>
-          Designed interactive and scenario-based learning modules, focusing on
-          real-world applications of exceptional customer service principles.
-          Used adult learning theories and instructional design principles.
+          Add classes with detailed information, view schedules in a calendar
+          format, and update or delete events as needed—all in one place.
         </p>
       </div>
 
       <div class="detail-card">
-        <h3 class="gradient-text">Challenges Overcome</h3>
+        <h3 class="gradient-text">Key Features</h3>
         <p>
-          Ensuring the course remained engaging while addressing a wide range of
-          customer scenarios and aligning with diverse learning styles.
+          - Interactive calendar with real-time updates<br />
+          - Detailed tooltips for events<br />
+          - Seamless class management<br />
+          - User-friendly interface
         </p>
       </div>
 
       <div class="detail-card">
-        <h3 class="gradient-text">Key Highlights</h3>
+        <h3 class="gradient-text">Why It Matters</h3>
         <p>
-          Dynamic visuals, adaptive feedback, and practical exercises ensure
-          learners can confidently implement best practices in customer service.
+          Organize and streamline teaching schedules, enhancing productivity and
+          ensuring instructors are always on the same page.
         </p>
       </div>
 
       <div class="buttons">
         <a
-          href="https://360.articulate.com/review/content/e0ff2b79-2a93-4485-8a7a-fb0baf3bfcee/review"
-          class="btn"
+          href="https://moayyadsaleh.github.io/instructor-savailability/"
           target="_blank"
+          class="btn"
         >
-          <i class="fas fa-play-circle"></i> View the Course
+          <i class="fas fa-play-circle"></i> Explore the Tool
         </a>
-        <a href="corporate-training-projects.html" class="btn">
+        <a href="tech-solutions.html" class="btn">
           <i class="fas fa-arrow-left"></i> Back
         </a>
       </div>
     </section>
-    <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const navList = document.getElementById("nav-list");
-      const closeBtn = document.getElementById("close-btn");
-
-      const toggleMenu = (event) => {
-        navList.classList.toggle("show");
-        event.stopPropagation();
-      };
-
-      const closeMenu = () => {
-        navList.classList.remove("show");
-      };
-
-      const handleClickOutside = (event) => {
-        if (
-          !navList.contains(event.target) &&
-          !menuToggle.contains(event.target)
-        ) {
-          closeMenu();
-        }
-      };
-
-      menuToggle.addEventListener("click", toggleMenu);
-      closeBtn.addEventListener("click", closeMenu);
-      document.addEventListener("click", handleClickOutside);
-    </script>
-    <script>
-      document.addEventListener("scroll", function () {
-        const parallax = document.querySelector(".parallax-portfolio");
-        const offset = window.pageYOffset;
-        parallax.style.backgroundPositionY = offset * 0.5 + "px";
-      });
-    </script>
-    <script
-      src="https://cdn.counter.dev/script.js"
-      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
-      data-utcoffset="-6"
-    ></script>
     <script src="script.js"></script>
   </body>
 </html>
