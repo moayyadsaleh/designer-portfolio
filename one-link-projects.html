@@ -1,443 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moayyad Alazzam Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <!-- Navigation -->
-    <nav>
-      <div class="logo">Portfolio</div>
-      <button class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
-      </button>
-      <ul class="nav-list" id="nav-list">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#portfolio">Portfolio</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        <li>
-          <button class="close-btn" id="close-btn">
-            <i class="fas fa-times"></i>
-          </button>
-        </li>
-      </ul>
-      <button class="theme-toggle" id="theme-toggle">
-        <i class="fas fa-moon"></i>
-      </button>
-    </nav>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Arial", sans-serif;
-        scroll-behavior: smooth;
-      }
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta
+        name="description"
+        content="Explore Moayyad Alazzam's portfolio featuring innovative tools, instructional designs, and cutting-edge projects for language learning and corporate solutions."
+      />
+      <meta
+        name="keywords"
+        content="Moayyad Alazzam, portfolio, instructional design, tools, apps, e-learning, innovation, data visualization, language learning"
+      />
+      <meta name="author" content="Moayyad Alazzam" />
+      <title>Moayyad Alazzam Portfolio | Innovative Projects & Solutions</title>
+      <link rel="stylesheet" href="styles.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      />
+      <!-- Navigation -->
+      <nav>
+        <div class="logo">Portfolio</div>
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li>
+            <button class="close-btn" id="close-btn">
+              <i class="fas fa-times"></i>
+            </button>
+          </li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Arial", sans-serif;
+          scroll-behavior: smooth;
+        }
 
-      /* Ensure body and html have full height for scrolling */
-      html,
-      body {
-        height: 100%;
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-      }
+        /* Ensure body and html have full height for scrolling */
+        html,
+        body {
+          height: 100%;
+          overflow-x: hidden;
+          scroll-behavior: smooth;
+        }
 
-      /* Parallax for header */
-      header {
-        height: 100vh;
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-          ),
-          /* Dim overlay */
-            url("DALL·E 2024-12-29 11.22.06 - A hyper-realistic abstract background featuring glowing icons that represent apps, books, charts, keyboards, and collaboration tools. The design uses .webp");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed; /* Enables parallax scrolling */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
+        /* Parallax for header */
+        header {
+          height: 100vh;
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.4),
+              rgba(0, 0, 0, 0.4)
+            ),
+            /* Dim overlay */
+              url("DALL·E 2024-12-29 11.22.06 - A hyper-realistic abstract background featuring glowing icons that represent apps, books, charts, keyboards, and collaboration tools. The design uses .webp");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed; /* Enables parallax scrolling */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
 
-      /* Parallax for sections */
+        /* Parallax for sections */
 
-      header h1 {
-        font-size: 4rem;
-        backdrop-filter: blur(10px);
-        background: rgba(255, 255, 255, 0.1);
-        padding: 1rem 2rem;
-        border-radius: 20px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-      }
-      section {
-        padding: 5rem 2rem;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        background-attachment: fixed; /* Enables the parallax effect */
-        background-size: 100% auto; /* Ensures the full width of the photo is displayed */
-        background-position: center top; /* Starts at the top of the image */
-        background-image: url("pexels-pixabay-219692.jpg") !important; /* Replace with your image URL */
-        transition: background-position 0.1s ease-out;
-      }
-
-      .project-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .project-item {
-        backdrop-filter: blur(15px);
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-        padding: 1.5rem;
-      }
-
-      .project-item h3 {
-        margin-bottom: 0.5rem;
-        font-size: 1.5rem;
-        color: #fff;
-      }
-
-      .project-item p {
-        color: #ccc;
-        font-size: 1rem;
-        line-height: 1.4;
-      }
-
-      .project-item a {
-        text-decoration: none;
-        color: #fff;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 0.5rem 1rem;
-        border-radius: 10px;
-        display: inline-block;
-        margin-top: 1rem;
-      }
-
-      .back-button {
-        text-decoration: none;
-        color: #fff;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 0.75rem 1.5rem;
-        border-radius: 10px;
-        display: inline-block;
-        margin: 2rem auto;
-        text-align: center;
-        max-width: 200px;
-      }
-
-      footer {
-        padding: 2rem;
-        text-align: center;
-        background: #1a1a1a;
-      }
-
-      @media (max-width: 768px) {
         header h1 {
-          font-size: 2.5rem;
-          padding: 0.5rem 1rem;
+          font-size: 4rem;
+          backdrop-filter: blur(10px);
+          background: rgba(255, 255, 255, 0.1);
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        section {
+          padding: 5rem 2rem;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          background-attachment: fixed; /* Enables the parallax effect */
+          background-size: 100% auto; /* Ensures the full width of the photo is displayed */
+          background-position: center top; /* Starts at the top of the image */
+          background-image: url("pexels-pixabay-219692.jpg") !important; /* Replace with your image URL */
+          transition: background-position 0.1s ease-out;
+        }
+
+        .project-list {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          max-width: 800px;
+          margin: 0 auto;
         }
 
         .project-item {
-          padding: 1rem;
+          backdrop-filter: blur(15px);
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 15px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+          padding: 1.5rem;
         }
 
         .project-item h3 {
-          font-size: 1.25rem;
+          margin-bottom: 0.5rem;
+          font-size: 1.5rem;
+          color: #fff;
         }
 
         .project-item p {
-          font-size: 0.9rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        header h1 {
-          font-size: 2rem;
-          padding: 0.5rem;
-        }
-
-        .project-item h3 {
+          color: #ccc;
           font-size: 1rem;
+          line-height: 1.4;
         }
 
-        .project-item p {
-          font-size: 0.8rem;
+        .project-item a {
+          text-decoration: none;
+          color: #fff;
+          background: rgba(255, 255, 255, 0.2);
+          padding: 0.5rem 1rem;
+          border-radius: 10px;
+          display: inline-block;
+          margin-top: 1rem;
         }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1 class="gradient-text">Explore My Work. See What's Possible.</h1>
-    </header>
 
-    <section style="background-image: url('background1.jpg')">
-      <h2 class="gradient-text">Projects</h2>
-      <div class="project-list">
-        <div class="project-item">
-          <h3 class="gradient-text">Project 1: IDeveloperHub</h3>
-          <p>
-            I built this open-source platform and its tools to empower
-            instructional designers to create, build, and innovate.
-          </p>
-          <a
-            href="https://moayyadsaleh.github.io/IDeveloperHub/index.html"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">
-            Project 2: High-Quality Video and Photo Capture
-          </h3>
-          <p>
-            I programmed this app that lets you capture and download
-            high-quality selfies or videos from your computer. Simple. Fast.
-            Convenient.
-          </p>
-          <a
-            href="https://moayyadsaleh.github.io/capture-a-selfie/"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">
-            Project 3: StickySmart: Organize. Remind. Simplify.
-          </h3>
-          <p>
-            I created this virtual sticky note app that looks real, tracks
-            tasks, and sends reminders. Add unlimited notes with ease.
-          </p>
-          <a href="https://moayyadsaleh.github.io/Sticky-Note/" target="_blank">
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">Project 4: From Dull to Dynamic Part 1</h3>
-          <p>
-            A project in which I transformed outdated and boring PowerPoint
-            content into sleek, modern designs.
-          </p>
-          <a href="https://shorturl.at/TiYRQ" target="_blank">
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">Project 5: Customer Service Excellence</h3>
-          <p>
-            A course I designed using Articulate Storyline to elevate corporate
-            teams' customer service expertise.
-          </p>
-          <a
-            href="https://360.articulate.com/review/content/e0ff2b79-2a93-4485-8a7a-fb0baf3bfcee/review"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">Project 6: From Dull to Dynamic Part 2</h3>
-          <p>
-            A project in which I transformed outdated and boring PowerPoint
-            content into sleek, modern designs.
-          </p>
-          <a
-            href="https://umconnectumt-my.sharepoint.com/:p:/g/personal/ma144148_umconnect_umt_edu/EevQwgbG31pJvTXp5nGIHIcBTUBsai-_kShaHVywF1tG6A?e=WbScAd"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">
-            Project 7: Boost Productivity in 3 Steps
-          </h3>
-          <p>
-            I created this microlearning course in Rise, using clear
-            infographics and aligning it with Bloom's Taxonomy.
-          </p>
-          <a
-            href="https://360.articulate.com/review/content/607e0429-6dc9-428c-ad35-a9cf16cce46e/review"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">
-            Project 8: Transcribe: A Tool for Instructors, Support for Learners
-          </h3>
-          <p>
-            I programmed this tool that transcribes across 4+ languages, perfect
-            for language instructors to create activities in no time.
-          </p>
-          <a
-            href="https://moayyadsaleh.github.io/Speech-to-Text-Transcriber/"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">Project 9: Text to voice: 9+ Languages</h3>
-          <p>
-            I built this tool for both language instructors and learners.
-            Converts text into voice in 9+ languages in one platform.
-          </p>
-          <a href="https://moayyadsaleh.github.io/VoiceReal/" target="_blank">
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">
-            Project 10: Virtual LanguageBoard: Teach. Learn. Simplify.
-          </h3>
-          <p>
-            I coded this virtual keyboard and board interface for language
-            Instructors and learners. 6+ languages. One platform.
-          </p>
-          <a
-            href="https://moayyadsaleh.github.io/multilingual-virtual-keyboard-/"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <!-- Additional Projects -->
-        <div class="project-item">
-          <h3 class="gradient-text">
-            Project 11: Data Visualizer: Simplifying Insights
-          </h3>
-          <p>
-            A web-based tool I designed to transform raw datasets into
-            interactive and dynamic charts, perfect for quick data analysis and
-            reporting.
-          </p>
-          <a
-            href="https://moayyadsaleh.github.io/training-data-visualizer-analyzer/"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">
-            Project 12: Real-Time Collaboration Tool
-          </h3>
-          <p>
-            I built this tool that enables real-time content editing, feedback
-            exchange, and communication, making it ideal for teams and remote
-            work environments.
-          </p>
-          <a
-            href="https://moayyadsaleh.github.io/real-time-collaboration-feedback-sharing/"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">
-            Project 13: LinguisticVaults: Teach. Learn. Master
-          </h3>
-          <p>
-            I built and curated this huge collection of resources for language
-            instructors and language learners.
-          </p>
-          <a
-            href="https://moayyadsaleh.github.io/linguistic-vault/"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">
-            Project 14: Interactive Vocabulary Builder: Empower. Teach. Learn.
-          </h3>
-          <p>
-            I coded this e-book to support language teachers and students in
-            mastering vocabulary and pronunciation across 5+ languages.
-          </p>
-          <a
-            href="https://moayyadsaleh.github.io/Vocabulary-Builder/"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-        <div class="project-item">
-          <h3 class="gradient-text">
-            Project 15: Next-Level Storyline Features
-          </h3>
-          <p>
-            I coded 3D model, modern notifications, and a smartwatch-style
-            progress tracker and embedded them into Articulate Storyline.
-          </p>
-          <a
-            href="https://360.articulate.com/review/content/2c04b64d-aeee-474e-b382-2ded3dcf725c/review"
-            target="_blank"
-          >
-            <i class="fas fa-eye"></i> View in Action
-          </a>
-        </div>
-      </div>
-      <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        rel="stylesheet"
-      />
-      <a href="index.html" class="back-button">
-        <i class="fas fa-arrow-left"></i> Back to Home
-      </a>
-    </section>
+        .back-button {
+          text-decoration: none;
+          color: #fff;
+          background: rgba(255, 255, 255, 0.2);
+          padding: 0.75rem 1.5rem;
+          border-radius: 10px;
+          display: inline-block;
+          margin: 2rem auto;
+          text-align: center;
+          max-width: 200px;
+        }
 
-    <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const navList = document.getElementById("nav-list");
-      const closeBtn = document.getElementById("close-btn");
+        footer {
+          padding: 2rem;
+          text-align: center;
+          background: #1a1a1a;
+        }
 
-      // Toggle menu on hamburger click
-      menuToggle.addEventListener("click", (event) => {
-        navList.classList.toggle("show");
-        event.stopPropagation();
-      });
+        @media (max-width: 768px) {
+          header h1 {
+            font-size: 2.5rem;
+            padding: 0.5rem 1rem;
+          }
 
-      // Close menu when clicking the (x) button
-      closeBtn.addEventListener("click", () => {
-        navList.classList.remove("show");
-      });
+          .project-item {
+            padding: 1rem;
+          }
 
-      // Close menu when clicking outside the menu
-      document.addEventListener("click", (event) => {
-        if (
-          !navList.contains(event.target) &&
-          !menuToggle.contains(event.target)
-        ) {
+          .project-item h3 {
+            font-size: 1.25rem;
+          }
+
+          .project-item p {
+            font-size: 0.9rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          header h1 {
+            font-size: 2rem;
+            padding: 0.5rem;
+          }
+
+          .project-item h3 {
+            font-size: 1rem;
+          }
+
+          .project-item p {
+            font-size: 0.8rem;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <header>
+        <h1 class="gradient-text">Explore My Work. See What's Possible.</h1>
+      </header>
+
+      <section style="background-image: url('background1.jpg')">
+        <h2 class="gradient-text">Projects</h2>
+        <div class="project-list">
+          <div class="project-item">
+            <h3 class="gradient-text">Project 1: IDeveloperHub</h3>
+            <p>
+              I built this open-source platform and its tools to empower
+              instructional designers to create, build, and innovate.
+            </p>
+            <a
+              href="https://moayyadsaleh.github.io/IDeveloperHub/index.html"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 2: High-Quality Video and Photo Capture
+            </h3>
+            <p>
+              I programmed this app that lets you capture and download
+              high-quality selfies or videos from your computer. Simple. Fast.
+              Convenient.
+            </p>
+            <a
+              href="https://moayyadsaleh.github.io/capture-a-selfie/"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 3: StickySmart: Organize. Remind. Simplify.
+            </h3>
+            <p>
+              I created this virtual sticky note app that looks real, tracks
+              tasks, and sends reminders. Add unlimited notes with ease.
+            </p>
+            <a
+              href="https://moayyadsaleh.github.io/Sticky-Note/"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 4: From Dull to Dynamic Part 1
+            </h3>
+            <p>
+              A project in which I transformed outdated and boring PowerPoint
+              content into sleek, modern designs.
+            </p>
+            <a href="https://shorturl.at/TiYRQ" target="_blank">
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 5: Customer Service Excellence
+            </h3>
+            <p>
+              A course I designed using Articulate Storyline to elevate
+              corporate teams' customer service expertise.
+            </p>
+            <a
+              href="https://360.articulate.com/review/content/e0ff2b79-2a93-4485-8a7a-fb0baf3bfcee/review"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 6: From Dull to Dynamic Part 2
+            </h3>
+            <p>
+              A project in which I transformed outdated and boring PowerPoint
+              content into sleek, modern designs.
+            </p>
+            <a
+              href="https://umconnectumt-my.sharepoint.com/:p:/g/personal/ma144148_umconnect_umt_edu/EevQwgbG31pJvTXp5nGIHIcBTUBsai-_kShaHVywF1tG6A?e=WbScAd"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 7: Boost Productivity in 3 Steps
+            </h3>
+            <p>
+              I created this microlearning course in Rise, using clear
+              infographics and aligning it with Bloom's Taxonomy.
+            </p>
+            <a
+              href="https://360.articulate.com/review/content/607e0429-6dc9-428c-ad35-a9cf16cce46e/review"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 8: Transcribe: A Tool for Instructors, Support for
+              Learners
+            </h3>
+            <p>
+              I programmed this tool that transcribes across 4+ languages,
+              perfect for language instructors to create activities in no time.
+            </p>
+            <a
+              href="https://moayyadsaleh.github.io/Speech-to-Text-Transcriber/"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 9: Text to voice: 9+ Languages
+            </h3>
+            <p>
+              I built this tool for both language instructors and learners.
+              Converts text into voice in 9+ languages in one platform.
+            </p>
+            <a href="https://moayyadsaleh.github.io/VoiceReal/" target="_blank">
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 10: Virtual LanguageBoard: Teach. Learn. Simplify.
+            </h3>
+            <p>
+              I coded this virtual keyboard and board interface for language
+              Instructors and learners. 6+ languages. One platform.
+            </p>
+            <a
+              href="https://moayyadsaleh.github.io/multilingual-virtual-keyboard-/"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <!-- Additional Projects -->
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 11: Data Visualizer: Simplifying Insights
+            </h3>
+            <p>
+              A web-based tool I designed to transform raw datasets into
+              interactive and dynamic charts, perfect for quick data analysis
+              and reporting.
+            </p>
+            <a
+              href="https://moayyadsaleh.github.io/training-data-visualizer-analyzer/"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 12: Real-Time Collaboration Tool
+            </h3>
+            <p>
+              I built this tool that enables real-time content editing, feedback
+              exchange, and communication, making it ideal for teams and remote
+              work environments.
+            </p>
+            <a
+              href="https://moayyadsaleh.github.io/real-time-collaboration-feedback-sharing/"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 13: LinguisticVaults: Teach. Learn. Master
+            </h3>
+            <p>
+              I built and curated this huge collection of resources for language
+              instructors and language learners.
+            </p>
+            <a
+              href="https://moayyadsaleh.github.io/linguistic-vault/"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 14: Interactive Vocabulary Builder: Empower. Teach. Learn.
+            </h3>
+            <p>
+              I coded this e-book to support language teachers and students in
+              mastering vocabulary and pronunciation across 5+ languages.
+            </p>
+            <a
+              href="https://moayyadsaleh.github.io/Vocabulary-Builder/"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+          <div class="project-item">
+            <h3 class="gradient-text">
+              Project 15: Next-Level Storyline Features
+            </h3>
+            <p>
+              I coded 3D model, modern notifications, and a smartwatch-style
+              progress tracker and embedded them into Articulate Storyline.
+            </p>
+            <a
+              href="https://360.articulate.com/review/content/2c04b64d-aeee-474e-b382-2ded3dcf725c/review"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View in Action
+            </a>
+          </div>
+        </div>
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          rel="stylesheet"
+        />
+        <a href="index.html" class="back-button">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+      </section>
+
+      <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const navList = document.getElementById("nav-list");
+        const closeBtn = document.getElementById("close-btn");
+
+        // Toggle menu on hamburger click
+        menuToggle.addEventListener("click", (event) => {
+          navList.classList.toggle("show");
+          event.stopPropagation();
+        });
+
+        // Close menu when clicking the (x) button
+        closeBtn.addEventListener("click", () => {
           navList.classList.remove("show");
-        }
-      });
-    </script>
-    <script
-      src="https://cdn.counter.dev/script.js"
-      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
-      data-utcoffset="-6"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+        });
+
+        // Close menu when clicking outside the menu
+        document.addEventListener("click", (event) => {
+          if (
+            !navList.contains(event.target) &&
+            !menuToggle.contains(event.target)
+          ) {
+            navList.classList.remove("show");
+          }
+        });
+      </script>
+      <script
+        src="https://cdn.counter.dev/script.js"
+        data-id="1352eae3-8256-487a-85f6-e08abaac5740"
+        data-utcoffset="-6"
+      ></script>
+      <script src="script.js"></script>
+    </body>
+  </html>
 </html>
