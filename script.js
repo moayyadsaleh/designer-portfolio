@@ -113,17 +113,12 @@ const messages = [
   },
   {
     user: "person2",
-    text: "I create interactive learning tools, develop custom web solutions, and enhance educational outcomes with technology.",
+    text: "I help organizations design innovative learning solutions, implement advanced tech strategies, and empower teams with impactful tools.",
     profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person2",
-    text: "I analyze data to optimize learning strategies, automate workflows, and improve efficiency.",
-    profileImage: "Moayyad's Pic.png",
-  },
-  {
-    user: "person2",
-    text: "I design, program, and build solutions that merge education, design, and technology for maximum impact.",
+    text: "My work combines education, design, and technology to build engaging courses, intuitive web apps, and data-driven systems.",
     profileImage: "Moayyad's Pic.png",
   },
 ];
