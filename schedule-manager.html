@@ -16,23 +16,20 @@
         <i class="fas fa-bars"></i>
       </button>
       <ul class="nav-list" id="nav-list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#instructions">Instructions</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
         <li>
           <button class="close-btn" id="close-btn">
             <i class="fas fa-times"></i>
           </button>
         </li>
       </ul>
-      <button
-        class="theme-toggle"
-        id="theme-toggle"
-        data-tooltip="Toggle Dark/Light Mode"
-      >
+      <button class="theme-toggle" id="theme-toggle">
         <i class="fas fa-moon"></i>
       </button>
     </nav>
+
     <style>
       * {
         margin: 0;
@@ -222,6 +219,33 @@
         </a>
       </div>
     </section>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navList = document.getElementById("nav-list");
+      const closeBtn = document.getElementById("close-btn");
+
+      const toggleMenu = (event) => {
+        navList.classList.toggle("show");
+        event.stopPropagation();
+      };
+
+      const closeMenu = () => {
+        navList.classList.remove("show");
+      };
+
+      const handleClickOutside = (event) => {
+        if (
+          !navList.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          closeMenu();
+        }
+      };
+
+      menuToggle.addEventListener("click", toggleMenu);
+      closeBtn.addEventListener("click", closeMenu);
+      document.addEventListener("click", handleClickOutside);
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
