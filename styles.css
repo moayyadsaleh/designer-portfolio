@@ -2019,3 +2019,37 @@ html {
     padding: 4px 0; /* Reduce padding for smaller screens */
   }
 }
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px; /* Increase the width of the scrollbar */
+  height: 12px; /* Increase the height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(
+    50,
+    50,
+    50,
+    0.8
+  ); /* Darker gray scrollbar for better visibility */
+  border-radius: 6px; /* Slightly more rounded edges */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Adds a border for contrast against the track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(30, 30, 30, 1); /* Darker on hover for clearer indication */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(
+    200,
+    200,
+    200,
+    0.5
+  ); /* Lighter track for higher contrast with the thumb */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(200, 200, 200, 0.5); /* Matches the track color */
+}
