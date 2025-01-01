@@ -1974,7 +1974,7 @@ html {
   font-size: 14px;
   color: #fff; /* White text for contrast */
   position: absolute;
-  top: -60px; /* Default positioning */
+  top: -55px; /* Default positioning */
   width: 100%; /* Full width */
   text-align: center; /* Center the text */
   background: linear-gradient(90deg, #6a11cb, #2575fc); /* Cool gradient */
@@ -2003,7 +2003,7 @@ html {
 
 @keyframes pulse {
   0%,
-  70% {
+  100% {
     transform: scale(1);
   }
   50% {
@@ -2015,7 +2015,7 @@ html {
 @media (max-width: 600px) {
   #chat-hint {
     font-size: 12px; /* Smaller font size for smaller screens */
-    top: -55px; /* Adjust position for smaller screens */
+    top: -45px; /* Adjust position for smaller screens */
     padding: 4px 0; /* Reduce padding for smaller screens */
   }
 }
