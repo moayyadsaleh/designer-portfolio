@@ -1970,3 +1970,37 @@ html {
     font-size: 1.5rem; /* Adjust font size for small screens */
   }
 }
+#chat-hint {
+  font-size: 14px;
+  color: #fff; /* White text for contrast */
+  position: absolute;
+  top: -60px; /* Default positioning */
+  width: 100%; /* Full width */
+  text-align: center; /* Center the text */
+  background: linear-gradient(90deg, #6a11cb, #2575fc); /* Cool gradient */
+  padding: 5px 0; /* Adjust padding for better appearance */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  animation: pulse 2s infinite;
+  opacity: 0.9;
+  z-index: 10; /* Ensure it stays above other elements */
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 600px) {
+  #chat-hint {
+    font-size: 12px; /* Smaller font size for smaller screens */
+    top: -55px; /* Adjust position for smaller screens */
+    padding: 4px 0; /* Reduce padding for smaller screens */
+  }
+}
