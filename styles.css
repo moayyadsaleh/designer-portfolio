@@ -1974,7 +1974,7 @@ html {
   font-size: 14px;
   color: #fff; /* White text for contrast */
   position: absolute;
-  top: -55px; /* Default positioning */
+  top: -57px; /* Default positioning */
   width: 100%; /* Full width */
   text-align: center; /* Center the text */
   background: linear-gradient(90deg, #6a11cb, #2575fc); /* Cool gradient */
