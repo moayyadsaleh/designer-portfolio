@@ -1980,15 +1980,30 @@ html {
   background: linear-gradient(90deg, #6a11cb, #2575fc); /* Cool gradient */
   padding: 5px 0; /* Adjust padding for better appearance */
   border-radius: 10px; /* Rounded corners for a modern look */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-  animation: pulse 2s infinite;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3),
+    /* Subtle shadow for depth */ 0 0 15px rgba(255, 255, 255, 0.8),
+    /* Light glow */ 0 0 30px rgba(255, 255, 255, 0.6),
+    0 0 50px rgba(255, 255, 255, 0.4); /* Extended glow effect */
+  animation: glow-pulse 3s infinite, pulse 2s infinite;
   opacity: 0.9;
   z-index: 10; /* Ensure it stays above other elements */
 }
 
-@keyframes pulse {
+@keyframes glow-pulse {
   0%,
   100% {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.8),
+      0 0 30px rgba(255, 255, 255, 0.6), 0 0 50px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 1),
+      0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.6);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  70% {
     transform: scale(1);
   }
   50% {
