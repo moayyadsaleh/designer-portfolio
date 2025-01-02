@@ -2020,7 +2020,7 @@ html {
 @media (max-width: 600px) {
   #chat-hint {
     font-size: 12px; /* Smaller font size for smaller screens */
-    top: -45px; /* Adjust position for smaller screens */
+    top: -48px; /* Adjust position for smaller screens */
     padding: 4px 0; /* Reduce padding for smaller screens */
   }
 }
