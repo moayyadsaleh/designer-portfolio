@@ -2058,20 +2058,29 @@ html {
 ::-webkit-scrollbar-corner {
   background: rgba(200, 200, 200, 0.5); /* Matches the track color */
 }
+/* Pulse Effect for Icons */
 .glowing-icon {
-  animation: glow 1.5s infinite alternate;
+  position: relative;
+  animation: pulse 1.5s infinite;
+  transition: transform 0.3s ease;
 }
 
-@keyframes glow {
+.glowing-icon:hover {
+  transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+@keyframes pulse {
   0% {
-    text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff, 0 0 20px #00d4ff,
-      0 0 30px #00ff8c, 0 0 40px #00ff8c, 0 0 50px #00ff8c;
+    box-shadow: 0 0 5px rgba(0, 212, 255, 0.7), 0 0 10px rgba(0, 212, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8), 0 0 30px rgba(0, 212, 255, 0.6);
   }
   100% {
-    text-shadow: 0 0 10px #00ff8c, 0 0 20px #00ff8c, 0 0 30px #00d4ff,
-      0 0 40px #00d4ff, 0 0 50px #00d4ff, 0 0 60px #00d4ff;
+    box-shadow: 0 0 5px rgba(0, 212, 255, 0.7), 0 0 10px rgba(0, 212, 255, 0.5);
   }
 }
+
 .modal-experience {
   display: none;
   position: fixed;
