@@ -372,3 +372,11 @@ function toggleInfoPopup() {
   const infoModal = document.getElementById("info-modal");
   infoModal.classList.toggle("hidden");
 }
+function toggleSkillsModal() {
+  const modal = document.getElementById("skills-modal");
+  if (modal.classList.contains("hidden")) {
+    modal.classList.remove("hidden");
+  } else {
+    modal.classList.add("hidden");
+  }
+}

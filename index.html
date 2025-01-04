@@ -226,6 +226,18 @@
       <p>
         I help organizations create innovative learning solutions, implement
         advanced tech strategies, and empower teams for success.
+        <i
+          class="fas fa-tools skills-icon glowing-icon"
+          onclick="toggleSkillsModal()"
+          title="Click to View Skills"
+          style="
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #00d4ff;
+            margin-left: 10px;
+          "
+        >
+        </i>
       </p>
       <div class="about-item">
         <i class="fas fa-lightbulb"></i>
@@ -249,7 +261,38 @@
         </div>
       </div>
     </section>
-
+    <!-- Skills Modal -->
+    <div id="skills-modal" class="modal hidden">
+      <div class="modal-content">
+        <button class="close-modal" onclick="toggleSkillsModal()">
+          &times;
+        </button>
+        <h2>Skills</h2>
+        <ul>
+          <li>
+            <strong>eLearning Authoring Tools:</strong> Articulate 360, Adobe
+            Captivate, Lectora
+          </li>
+          <li><strong>LMS:</strong> Moodle, Blackboard, Canvas</li>
+          <li>
+            <strong>Multimedia Production:</strong> Adobe Premiere Pro,
+            Camtasia, Canva
+          </li>
+          <li>
+            <strong>Graphic Design Tools:</strong> Adobe Photoshop, Illustrator,
+            Audacity
+          </li>
+          <li>
+            <strong>Front-End Development:</strong> HTML, CSS, JavaScript,
+            React.js
+          </li>
+          <li>
+            <strong>Back-End Development:</strong> Node.js, Express.js, SQL,
+            MongoDB, Git
+          </li>
+        </ul>
+      </div>
+    </div>
     <!-- Portfolio Section -->
     <section id="portfolio" class="section parallax-portfolio">
       <h2 class="gradient-text">Portfolio</h2>
