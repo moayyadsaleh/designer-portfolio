@@ -2113,3 +2113,40 @@ html {
   font-size: 1.5rem;
   cursor: pointer;
 }
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  .modal-content,
+  .modal-experience-content {
+    width: 90%; /* Increase width for smaller devices */
+    max-width: 500px; /* Restrict max width */
+    padding: 15px; /* Adjust padding */
+  }
+
+  ul li {
+    font-size: 0.9rem; /* Reduce font size for better fit */
+    line-height: 1.4;
+  }
+
+  .close-modal,
+  .close-experience-modal {
+    font-size: 1.2rem; /* Adjust close button size */
+  }
+}
+
+/* Media Queries for Extra Small Screens */
+@media (max-width: 480px) {
+  .modal-content,
+  .modal-experience-content {
+    width: 95%; /* Maximize width for extra small devices */
+    padding: 10px; /* Further reduce padding */
+  }
+
+  ul li {
+    font-size: 0.8rem; /* Further reduce font size */
+  }
+
+  .close-modal,
+  .close-experience-modal {
+    font-size: 1rem; /* Scale down close button size */
+  }
+}
