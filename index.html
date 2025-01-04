@@ -151,6 +151,34 @@
 
           <p>
             I create solutions where education, design, and technology meet.
+            <i
+              class="fas fa-graduation-cap glowing-icon"
+              onclick="toggleExperienceModal()"
+              title="Click to View Skills"
+              style="
+                cursor: pointer;
+                font-size: 1.5rem;
+                color: #00d4ff;
+                margin-left: 10px;
+              "
+            >
+            </i>
+<!-- Experience Modal -->
+<div id="experience-modal" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-modal" onclick="toggleExperienceModal()">&times;</button>
+    <h2>Experience</h2>
+    <ul>
+      <li><i class="fas fa-lightbulb"></i> Solid foundation in instructional design theories, methodologies, and best practices, including the ADDIE model, adult learning principles, and multimedia principles.</li>
+      <li><i class="fas fa-chart-bar"></i> Over five years of experience in summative and formative evaluation with strong analytical skills to assess and develop recommendations to improve learning.</li>
+      <li><i class="fas fa-project-diagram"></i> Successfully managed large-scale education projects with budgets of $700K, ensuring timely, cost-effective delivery within quality parameters.</li>
+      <li><i class="fas fa-video"></i> Expertise in educational technology and multimedia production, including instructional videos, adaptive e-learning, and educational games.</li>
+      <li><i class="fas fa-users"></i> Excellent interpersonal and leadership skills, with the ability to work with cross-functional teams and autonomously.</li>
+    </ul>
+  </div>
+</div>
+
+
           </p>
         </div>
       </div>
@@ -261,37 +289,40 @@
         </div>
       </div>
     </section>
-    <!-- Skills Modal -->
-    <div id="skills-modal" class="modal hidden">
-      <div class="modal-content">
-        <button class="close-modal" onclick="toggleSkillsModal()">
-          &times;
-        </button>
-        <h2>Skills</h2>
-        <ul>
-          <li>
-            <strong>eLearning Authoring Tools:</strong> Articulate 360, Adobe
-            Captivate, Lectora
-          </li>
-          <li><strong>LMS:</strong> Moodle, Blackboard, Canvas</li>
-          <li>
-            <strong>Multimedia Production:</strong> Adobe Premiere Pro,
-            Camtasia, Canva
-          </li>
-          <li>
-            <strong>Graphic Design Tools:</strong> Adobe Photoshop, Illustrator,
-            Audacity
-          </li>
-          <li>
-            <strong>Front-End Development:</strong> HTML, CSS, JavaScript,
-            React.js
-          </li>
-          <li>
-            <strong>Back-End Development:</strong> Node.js, Express.js, SQL,
-            MongoDB, Git
-          </li>
-        </ul>
-      </div>
+<!-- Skills Modal -->
+<div id="skills-modal" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-modal" onclick="toggleSkillsModal()">&times;</button>
+    <h2>Skills</h2>
+    <ul>
+      <li>
+        <i class="fas fa-pencil-ruler"></i>
+        <strong>eLearning Authoring Tools:</strong> Articulate 360, Adobe Captivate, Lectora
+      </li>
+      <li>
+        <i class="fas fa-graduation-cap"></i>
+        <strong>LMS:</strong> Moodle, Blackboard, Canvas
+      </li>
+      <li>
+        <i class="fas fa-video"></i>
+        <strong>Multimedia Production:</strong> Adobe Premiere Pro, Camtasia, Canva
+      </li>
+      <li>
+        <i class="fas fa-palette"></i>
+        <strong>Graphic Design Tools:</strong> Adobe Photoshop, Illustrator, Audacity
+      </li>
+      <li>
+        <i class="fas fa-code"></i>
+        <strong>Front-End Development:</strong> HTML, CSS, JavaScript, React.js
+      </li>
+      <li>
+        <i class="fas fa-server"></i>
+        <strong>Back-End Development:</strong> Node.js, Express.js, SQL, MongoDB, Git
+      </li>
+    </ul>
+  </div>
+</div>
+
     </div>
     <!-- Portfolio Section -->
     <section id="portfolio" class="section parallax-portfolio">

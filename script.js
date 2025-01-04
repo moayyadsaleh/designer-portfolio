@@ -372,11 +372,22 @@ function toggleInfoPopup() {
   const infoModal = document.getElementById("info-modal");
   infoModal.classList.toggle("hidden");
 }
+// Toggle Skills Modal
 function toggleSkillsModal() {
-  const modal = document.getElementById("skills-modal");
-  if (modal.classList.contains("hidden")) {
-    modal.classList.remove("hidden");
+  const skillsModal = document.getElementById("skills-modal");
+  if (skillsModal.classList.contains("hidden")) {
+    skillsModal.classList.remove("hidden");
   } else {
-    modal.classList.add("hidden");
+    skillsModal.classList.add("hidden");
+  }
+}
+
+// Toggle Experience Modal
+function toggleExperienceModal() {
+  const experienceModal = document.getElementById("experience-modal");
+  if (experienceModal.classList.contains("hidden")) {
+    experienceModal.classList.remove("hidden");
+  } else {
+    experienceModal.classList.add("hidden");
   }
 }
