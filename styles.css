@@ -1850,6 +1850,7 @@ html {
 .modal.hidden {
   opacity: 0;
   visibility: hidden;
+  display: none; /* Fallback for any transition issue */
 }
 
 .modal-content {
