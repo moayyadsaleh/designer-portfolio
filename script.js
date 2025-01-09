@@ -159,26 +159,47 @@ function endChat() {
   }, 2000);
 }
 function startChat() {
-  chatBox.innerHTML = "";
-  currentMessageIndex = 0;
+  chatBox.innerHTML = ""; // Clear any existing chat
+  currentMessageIndex = 0; // Reset the message index
+
   function showNextMessage() {
     if (currentMessageIndex < messages.length) {
+      // Show the typing indicator first
       showTypingIndicator();
+
       setTimeout(() => {
+        // Type the current message
         typeMessage(messages[currentMessageIndex], () => {
-          currentMessageIndex++;
-          setTimeout(showNextMessage, 2000);
+          currentMessageIndex++; // Move to the next message
+          setTimeout(showNextMessage, 1000); // Delay before the next message
         });
-      }, 1000);
+      }, 1000); // Delay for typing indicator to display
     } else {
+      // End the chat sequence
       setTimeout(endChat, 1500);
     }
   }
-  showNextMessage();
+
+  showNextMessage(); // Start showing messages
 }
+
 document.addEventListener("DOMContentLoaded", () => {
-  startChat();
+  const chatContainer = document.getElementById("chat-container");
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startChat(); // Start the chat when the container becomes visible
+          observer.unobserve(chatContainer); // Stop observing once the chat has started
+        }
+      });
+    },
+    { threshold: 0.1 }
+  ); // Trigger when 10% of the element is visible
+
+  observer.observe(chatContainer);
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   const showQualBtn = document.getElementById("show-qualifications-btn");
   const qualifications = document.getElementById("qualifications");
