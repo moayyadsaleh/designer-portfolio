@@ -290,7 +290,7 @@ function appendMessage(message, sender) {
 }
 function sendWelcomeMessage() {
   const welcomeText =
-    "Hi there! I’m Moayyad’s virtual twin—here to answer your questions, share insights, and help you explore solutions. Let’s chat!";
+    "Hi, I’m Moayyad’s virtual twin. Ask me anything, explore ideas, or just say hi. Let’s chat!";
   appendMessage(welcomeText, "Person2");
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
