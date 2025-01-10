@@ -322,3 +322,23 @@ function toggleExperienceModal() {
     experienceModal.classList.add("hidden");
   }
 }
+function toggleInfoPopup() {
+  const modal = document.getElementById("info-modal");
+  modal.classList.toggle("hidden");
+}
+
+// Close modal on clicking outside for small devices
+document.addEventListener("click", (event) => {
+  const modal = document.getElementById("info-modal");
+  const modalContent = document.querySelector(".modal-content");
+
+  // Check screen size and detect clicks outside modal content
+  if (
+    window.innerWidth <= 768 && // Small device condition
+    !modal.classList.contains("hidden") &&
+    !modalContent.contains(event.target) &&
+    event.target.id !== "info-icon"
+  ) {
+    modal.classList.add("hidden");
+  }
+});

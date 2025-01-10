@@ -1675,3 +1675,12 @@ html {
     font-size: 1rem;
   }
 }
+.hidden {
+  display: none !important;
+}
+/* Small Devices: Hide Close Button */
+@media (max-width: 768px) {
+  .close-modal {
+    display: none;
+  }
+}
