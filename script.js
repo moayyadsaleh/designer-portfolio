@@ -327,12 +327,12 @@ function toggleInfoPopup() {
   modal.classList.toggle("hidden");
 }
 
-// Close modal on clicking outside for small devices
+// Close #info-modal on clicking outside for small devices
 document.addEventListener("click", (event) => {
   const modal = document.getElementById("info-modal");
-  const modalContent = document.querySelector(".modal-content");
+  const modalContent = modal.querySelector(".modal-content");
 
-  // Check screen size and detect clicks outside modal content
+  // Check if the event is relevant to #info-modal and the screen size is small
   if (
     window.innerWidth <= 768 && // Small device condition
     !modal.classList.contains("hidden") &&

@@ -1678,9 +1678,12 @@ html {
 .hidden {
   display: none !important;
 }
-/* Small Devices: Hide Close Button */
+/* Small Devices: Hide Close Button for #info-modal */
 @media (max-width: 768px) {
-  .close-modal {
+  #info-modal .info-close {
     display: none;
   }
+}
+#info-modal.hidden {
+  display: none;
 }
