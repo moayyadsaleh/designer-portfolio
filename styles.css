@@ -559,20 +559,7 @@ html {
   background-position: center;
   z-index: -1;
 }
-#open-chatbot:hover::after {
-  content: "Meet my pre-programmed side!";
-  position: absolute;
-  bottom: 100%;
-  right: 0;
-  background: rgba(255, 255, 255, 0.9);
-  color: #333;
-  padding: 5px 10px;
-  font-size: 12px;
-  border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  animation: 0.5s ease-in-out fadeIn;
-  white-space: nowrap;
-}
+
 #background::after {
   content: "";
   position: fixed;
