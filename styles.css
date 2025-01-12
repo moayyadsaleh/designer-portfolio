@@ -189,7 +189,6 @@ nav .theme-toggle {
   background: url("pexels-umar-mukhtar-703539-1538177 (1).jpg") center/cover
     no-repeat fixed;
   display: flex;
-  filter: brightness(80%); /* Dims the background */
   align-items: center;
   justify-content: center;
   padding: 2rem;
@@ -558,7 +557,6 @@ html {
   background-size: cover;
   background-position: center;
   z-index: -1;
-  filter: brightness(80%); /* Dims the background */
 }
 #open-chatbot:hover::after {
   content: "Meet my pre-programmed side!";
