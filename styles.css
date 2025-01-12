@@ -186,9 +186,10 @@ nav .theme-toggle {
 }
 .parallax {
   height: 100vh;
-  background: url("pexels-umar-mukhtar-703539-1538177 (1).jpg") center/cover
+  background: url("pexels-pixabay-219692 (1) (1) (1)-min.jpg") center/cover
     no-repeat fixed;
   display: flex;
+  filter: brightness(80%); /* Dims the background */
   align-items: center;
   justify-content: center;
   padding: 2rem;
@@ -552,11 +553,12 @@ html {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url("pexels-umar-mukhtar-703539-1538177 (1).jpg");
+  background-image: url("pexels-pixabay-219692 (1) (1) (1)-min.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   z-index: -1;
+  filter: brightness(80%); /* Dims the background */
 }
 #open-chatbot:hover::after {
   content: "Meet my pre-programmed side!";
