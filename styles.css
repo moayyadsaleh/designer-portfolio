@@ -119,7 +119,7 @@ nav ul {
   list-style: none;
 }
 .parallax-portfolio {
-  background-image: url("pexels-sanaan-3075993-min (1).jpg") !important;
+  background-image: url("4k-tech-ulcajgzzc25jlrgi.jpg") !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   background-position: center !important;
@@ -314,8 +314,8 @@ form {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 #contact {
-  background: url("pexels-pixabay-219692 (1) (1) (1)-min.jpg") center
-    center/cover no-repeat fixed;
+  background: url("4k-tech-ulcajgzzc25jlrgi.jpg") center center/cover no-repeat
+    fixed;
   z-index: 1;
 }
 #contact::before {
@@ -552,7 +552,7 @@ html {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url("pexels-daan-stevens-66128-939331 (1).jpg");
+  background-image: url("pexels-umar-mukhtar-703539-1538177 (1).jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
