@@ -119,7 +119,7 @@ nav ul {
   list-style: none;
 }
 .parallax-portfolio {
-  background-image: url("4k-tech-ulcajgzzc25jlrgi.jpg") !important;
+  background-image: url("pexels-sanaan-3075993-min (1).jpg") !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   background-position: center !important;
@@ -314,8 +314,8 @@ form {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 #contact {
-  background: url("4k-tech-ulcajgzzc25jlrgi.jpg") center center/cover no-repeat
-    fixed;
+  background: url("pexels-sanaan-3075993-min (1).jpg") center center/cover
+    no-repeat fixed;
   z-index: 1;
 }
 #contact::before {
