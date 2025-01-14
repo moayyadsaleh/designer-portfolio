@@ -93,15 +93,16 @@ const messages = [
   },
   {
     user: "person2",
-    text: "I help organizations design innovative learning solutions, implement advanced tech strategies, and empower teams with impactful tools.",
+    text: "I design innovative learning solutions, build intuitive tech tools, and deliver data-driven insights.",
     profileImage: "Moayyad's Pic.png",
   },
   {
     user: "person2",
-    text: "My work combines education, design, and technology to build engaging courses, intuitive web apps, and data-driven systems.",
+    text: "I bring together education, technology, and strategy to solve complex challenges with simplicity.",
     profileImage: "Moayyad's Pic.png",
   },
 ];
+
 let currentMessageIndex = 0;
 const chatBox = document.getElementById("chat-box");
 function typeMessage(message, callback) {
